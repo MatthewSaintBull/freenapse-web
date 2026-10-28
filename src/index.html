@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>freenapse: Razer Viper V3 Pro settings without Synapse</title>
+<meta name="description" content="freenapse configures a Razer Viper V3 Pro on Windows without Razer Synapse: DPI, polling rate, buttons and macros written to the mouse’s onboard memory. One 1 MB file, open source.">
+<link rel="canonical" href="https://freenapse.app/">
+<meta name="theme-color" content="#111112">
+<meta name="color-scheme" content="dark">
+<meta name="author" content="Matteo Santoro">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="freenapse">
+<meta property="og:title" content="freenapse: Razer Viper V3 Pro settings without Synapse">
+<meta property="og:description" content="One 1 MB program writes DPI, polling rate, buttons and macros into the mouse’s own memory. No installer, no account, no Razer software.">
+<meta property="og:url" content="https://freenapse.app/">
+<meta property="og:image" content="https://freenapse.app/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="The freenapse settings window on the Customize page: button assignment with the mouse drawing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="freenapse: Razer Viper V3 Pro settings without Synapse">
+<meta name="twitter:description" content="One 1 MB program writes DPI, polling rate, buttons and macros into the mouse’s own memory. No installer, no account, no Razer software.">
+<meta name="twitter:image" content="https://freenapse.app/assets/og.jpg">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="alternate" type="application/atom+xml" title="freenapse releases" href="/feed.xml">
+<link rel="preload" as="image" type="image/avif" imagesrcset="/assets/screenshot-customize-800.avif 800w, /assets/screenshot-customize-1240.avif 1240w, /assets/screenshot-customize-1860.avif 1860w" imagesizes="(min-width: 60rem) 57vw, 100vw">
+<style>
+{{css}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://freenapse.app/#app",
+      "name": "freenapse",
+      "url": "https://freenapse.app/",
+      "description": "Configure a Razer Viper V3 Pro from Windows without Razer Synapse: DPI stages, polling rate, button assignment, macros, sensor and power settings written to the mouse’s onboard memory.",
+      "applicationCategory": "UtilitiesApplication",
+      "operatingSystem": "Windows 10, Windows 11",
+      "softwareVersion": "{{version}}",
+      "datePublished": "{{release_date}}",
+      "downloadUrl": "{{download_url}}",
+      "fileSize": "{{exe_size_kb}}KB",
+      "releaseNotes": "https://freenapse.app/changelog/",
+      "screenshot": "https://freenapse.app/assets/screenshot-customize-1860.png",
+      "image": "https://freenapse.app/assets/og.jpg",
+      "license": "https://github.com/MatthewSaintBull/freenapse/blob/main/LICENSE",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "author": { "@type": "Person", "name": "Matteo Santoro", "url": "https://github.com/MatthewSaintBull" },
+      "sameAs": ["https://github.com/MatthewSaintBull/freenapse"]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is it safe to use freenapse on a Viper V3 Pro?", "acceptedAnswer": { "@type": "Answer", "text": "freenapse writes the same HID feature reports Synapse does and reads every value back. It cannot read or change the firmware. There is no warranty, and Razer will not support a mouse configured this way." } },
+        { "@type": "Question", "name": "Can I go back to Razer Synapse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Reinstall Synapse and it rewrites every setting from its own profile. Or delete freenapse’s config file and run freenapse apply for the defaults." } },
+        { "@type": "Question", "name": "Do I have to uninstall Synapse?", "acceptedAnswer": { "@type": "Answer", "text": "Quit it at least. While Synapse runs in the background it rewrites the settings it thinks it owns within about fifteen seconds, so anything freenapse sets appears not to stick." } },
+        { "@type": "Question", "name": "Why does a command sometimes get no answer?", "acceptedAnswer": { "@type": "Answer", "text": "The wireless mouse stops answering the dongle after a while idle. Keep moving it while a command runs; the tray app knows this and retries on its own." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav">
+  <div class="container">
+    <a class="wordmark" href="/" aria-label="freenapse, home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#181818"/><path d="M41.26 17.74A17 17 0 1 0 46.26 22.74" fill="none" stroke="#1db954" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="14" r="4.5" fill="#3fd676"/></svg>
+      <span><b>free</b>napse</span>
+    </a>
+    <nav aria-label="Site">
+      <ul class="nav__links">
+        <li><a href="/changelog/">Changelog</a></li>
+        <li><a href="https://github.com/MatthewSaintBull/freenapse">GitHub</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <h1 id="h-hero">Your Viper V3 Pro, without Synapse</h1>
+        <p class="lead">One 1&nbsp;MB program writes the settings into the mouse’s own memory.</p>
+        <div>
+          <div class="actions">
+            <a class="btn" href="{{download_url}}">Download freenapse {{version}}</a>
+            <a class="btn btn--quiet" href="https://github.com/MatthewSaintBull/freenapse">Source on GitHub</a>
+          </div>
+          <p class="fineprint">For Windows 10 and 11. {{exe_size_mb}}&nbsp;MB, no installer, no account. <a href="{{sha_url}}">SHA-256 checksum</a>.</p>
+        </div>
+      </div>
+      <figure class="capture hero__visual">
+        <picture>
+          <source type="image/avif" srcset="/assets/screenshot-customize-800.avif 800w, /assets/screenshot-customize-1240.avif 1240w, /assets/screenshot-customize-1860.avif 1860w" sizes="(min-width: 60rem) 57vw, 100vw">
+          <source type="image/webp" srcset="/assets/screenshot-customize-800.webp 800w, /assets/screenshot-customize-1240.webp 1240w, /assets/screenshot-customize-1860.webp 1860w" sizes="(min-width: 60rem) 57vw, 100vw">
+          <img src="/assets/screenshot-customize-1860.png" width="1860" height="1200" alt="The freenapse settings window on the Customize page: a list of the seven buttons with their assignments and a drawing of the mouse with the left button highlighted" fetchpriority="high" decoding="async">
+        </picture>
+      </figure>
+    </div>
+  </section>
+
+  <section class="tight" aria-labelledby="h-measured">
+    <div class="container">
+      <div class="head head--split">
+        <h2 id="h-measured">Measured on one PC, same mouse</h2>
+        <p class="lead">Synapse 4 beside freenapse on the machine it was written on, with the Viper V3 Pro on its HyperPolling dongle.</p>
+      </div>
+      <table class="table">
+        <thead><tr><th scope="col"><span class="visually-hidden">What</span></th><th scope="col">Razer Synapse 4</th><th scope="col">freenapse</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Processes</th><td data-col="Synapse 4">11 Electron processes and 2 services</td><td data-col="freenapse" class="us">1 tray process, or none when you run the CLI once</td></tr>
+          <tr><th scope="row">Memory</th><td data-col="Synapse 4">about 1.5&nbsp;GB</td><td data-col="freenapse" class="us">10&nbsp;MB working set</td></tr>
+          <tr><th scope="row">CPU in the background</th><td data-col="Synapse 4">polls the device and runs game detection constantly</td><td data-col="freenapse" class="us">idle, one battery read a minute</td></tr>
+          <tr><th scope="row">On disk</th><td data-col="Synapse 4">220&nbsp;MB runtime plus modules downloaded per product</td><td data-col="freenapse" class="us">one file of {{exe_size_mb}}&nbsp;MB</td></tr>
+          <tr><th scope="row">Account and internet</th><td data-col="Synapse 4">required</td><td data-col="freenapse" class="us">none</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-stored">
+    <div class="container">
+      <div class="head">
+        <h2 id="h-stored">Stored in the mouse itself</h2>
+        <p class="lead">Every setting goes to the onboard memory, so it survives a reboot and follows the mouse to a PC with nothing installed.</p>
+      </div>
+      <div class="card">
+        <dl class="rows">
+          <div><dt>DPI</dt><dd>Up to 5 stages, independent X and Y, 100 to 35000 in steps of 1, and the stage the mouse starts on.</dd></div>
+          <div><dt>Polling rate</dt><dd>125 to 8000&nbsp;Hz. 4000 and 8000 need the HyperPolling dongle; the tray app can raise the rate only while a game runs.</dd></div>
+          <div><dt>Buttons</dt><dd>All seven on the normal and Hypershift layers: mouse functions, keys with modifiers, media keys, DPI stage and cycle, Turbo, macros, disabled.</dd></div>
+          <div><dt>Dynamic Sensitivity</dt><dd>The onboard acceleration curve: Classic, Natural, Jump, or the points you drag yourself.</dd></div>
+          <div><dt>Sensor</dt><dd>Smart Tracking at 1, 2 or 3&nbsp;mm, or the asymmetric cut-off with lift-off and landing levels, plus angle correction.</dd></div>
+          <div><dt>Power and dongle</dt><dd>Idle sleep timeout, low power mode threshold, the dongle’s indicator LED, pairing.</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight" aria-labelledby="h-live">
+    <div class="container">
+      <div class="head">
+        <h2 id="h-live">Changes land as you make them</h2>
+        <p class="lead">There is no apply button. Each control writes its setting to the mouse the moment it changes and reads it back.</p>
+      </div>
+      <figure class="capture">
+        <picture>
+          <source type="image/avif" srcset="/assets/screenshot-performance-800.avif 800w, /assets/screenshot-performance-1240.avif 1240w, /assets/screenshot-performance-1860.avif 1860w" sizes="(min-width: 90rem) 1312px, (min-width: 60rem) calc(100vw - 128px), calc(100vw - 32px)">
+          <source type="image/webp" srcset="/assets/screenshot-performance-800.webp 800w, /assets/screenshot-performance-1240.webp 1240w, /assets/screenshot-performance-1860.webp 1860w" sizes="(min-width: 90rem) 1312px, (min-width: 60rem) calc(100vw - 128px), calc(100vw - 32px)">
+          <img src="/assets/screenshot-performance-1860.png" width="1860" height="1200" alt="The Performance page: DPI stages with sliders and number boxes, the Dynamic Sensitivity toggle and the polling rate slider from 125 to 8000 Hz" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>The Performance page, 80&nbsp;% battery on the device card. If the mouse is asleep the change waits and is written when it wakes.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="band tight" aria-labelledby="h-mice">
+    <div class="container split">
+      <div class="split__text">
+        <h2 id="h-mice">Built on one mouse, for now</h2>
+        <p>freenapse was written and tested against a single Razer Viper V3 Pro, wired and through its HyperPolling dongle. <strong>Those are the only two product ids it writes to.</strong></p>
+        <p>Any other Razer mouse opens read-only: <code>freenapse status</code> and <code>freenapse probe</code> work, and every write is refused with a message that says how to help.</p>
+        <p><strong>To add yours,</strong> paste the probe output into an issue, then open a pull request with your row in <code>src/device.rs</code> once it is tested on your mouse. <a href="https://github.com/MatthewSaintBull/freenapse/blob/main/CONTRIBUTING.md#adding-a-mouse">CONTRIBUTING.md</a> has the four steps; <a href="https://github.com/MatthewSaintBull/freenapse/blob/main/FEATURES.md#supported-mice">FEATURES.md</a> lists the rows waiting for an owner.</p>
+      </div>
+      <div>
+        <pre class="code" aria-label="Output of freenapse probe, abridged"><span class="k">freenapse probe</span>
+freenapse {{version}} probe
+vendor id 0x1532  product id 0x00c1
+table: Razer Viper V3 Pro (wireless) (verified)
+
+mouse firmware        tid 1f 00/81/02  status=02
+                      = firmware 1.11
+mouse serial          tid 1f 00/82/16  status=02
+                      = PM24***********  (masked)
+battery level         tid 1f 07/80/02  status=02
+                      = 78%
+dpi stages            tid 1f 04/86/26  status=02
+                      = active 1 of 2: 800/800 1000/1000
+polling hyperpolling  tid 1f 00/c0/01  status=02
+                      = 1000 Hz
+polling classic       tid 1f 00/85/01  <span class="c">no answer (status 05 not supported)</span>
+macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not supported)</span></pre>
+        <p class="code-caption">Abridged. The real output has every read with its argument bytes, and masks serial numbers by default.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight" aria-labelledby="h-questions">
+    <div class="container">
+      <div class="head">
+        <h2 id="h-questions">Before you replace Synapse</h2>
+      </div>
+      <dl class="qa">
+        <div><dt>Is it safe?</dt><dd>freenapse writes the same HID feature reports Synapse does and reads every value back. It cannot read or change the firmware. There is no warranty, and Razer will not support a mouse configured this way.</dd></div>
+        <div><dt>Can I go back?</dt><dd>Yes. Reinstall Synapse and it rewrites every setting from its own profile. Or delete the config file and run <code>freenapse apply</code> for the defaults.</dd></div>
+        <div><dt>Do I have to uninstall Synapse?</dt><dd>Quit it at least. While it runs in the background it rewrites the settings it thinks it owns within about fifteen seconds, so anything freenapse sets appears not to stick.</dd></div>
+        <div><dt>Why does a command sometimes get no answer?</dt><dd>The wireless mouse stops answering the dongle after a while idle. Keep moving it while a command runs; the tray app knows this and retries on its own.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="tight" aria-labelledby="h-start">
+    <div class="container split split--even">
+      <div class="split__text">
+        <h2 id="h-start">Start with one command</h2>
+        <pre class="code"><span class="k">freenapse status</span>        <span class="c"># what the mouse has stored right now</span>
+<span class="k">freenapse config</span>        <span class="c"># a config file built from those settings</span>
+<span class="k">freenapse apply</span>         <span class="c"># write your edits to the mouse</span>
+<span class="k">freenapse autostart on</span>  <span class="c"># tray icon: battery, DPI stage, polling rate</span></pre>
+        <p>The same file is the tray app when started without arguments, the settings window with <code>freenapse ui</code>, and the CLI with any other command.</p>
+        <div>
+          <div class="actions">
+            <a class="btn btn--quiet" href="{{download_url}}">Download freenapse.exe, {{exe_size_mb}}&nbsp;MB</a>
+          </div>
+          <p class="fineprint">Version {{version}}, released <time datetime="{{release_date}}">{{release_date_text}}</time>. <a href="/changelog/">What changed</a>.</p>
+        </div>
+      </div>
+      <figure class="capture close__visual">
+        <picture>
+          <source type="image/avif" srcset="/assets/detail-buttons-640.avif 640w, /assets/detail-buttons-1280.avif 1280w" sizes="(min-width: 60rem) 45vw, 100vw">
+          <source type="image/webp" srcset="/assets/detail-buttons-640.webp 640w, /assets/detail-buttons-1280.webp 1280w" sizes="(min-width: 60rem) 45vw, 100vw">
+          <img src="/assets/detail-buttons-640.png" width="640" height="540" alt="Detail of the Customize page: the mouse drawing with labels for left click, right click, middle click, scroll up, scroll down, forward and back" loading="lazy" decoding="async">
+        </picture>
+        <figcaption>The button you pick in the list lights up on the drawing. Assignments are stored in the mouse, so they work with no software running.</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <a class="wordmark" href="/" aria-label="freenapse, home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#181818"/><path d="M41.26 17.74A17 17 0 1 0 46.26 22.74" fill="none" stroke="#1db954" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="14" r="4.5" fill="#3fd676"/></svg><span><b>free</b>napse</span></a>
+        <p>An independent open-source project by Matteo Santoro, MIT licensed. Not affiliated with, endorsed by or supported by Razer Inc. Razer, Razer Synapse, Viper, HyperSpeed and HyperPolling are trademarks of Razer Inc., named only to say which hardware the program works with.</p>
+      </div>
+      <ul class="footer__links">
+        <li><a href="https://github.com/MatthewSaintBull/freenapse">Source code</a></li>
+        <li><a href="https://github.com/MatthewSaintBull/freenapse/releases">Releases</a></li>
+        <li><a href="/changelog/">Changelog</a></li>
+        <li><a href="https://github.com/MatthewSaintBull/freenapse/issues">Issues</a></li>
+        <li><a href="https://github.com/MatthewSaintBull/freenapse/blob/main/LICENSE">Licence</a></li>
+        <li><a href="https://github.com/MatthewSaintBull/freenapse/blob/main/NOTICE.md">Notices and provenance</a></li>
+        <li><a href="https://github.com/MatthewSaintBull/freenapse/blob/main/CONTRIBUTING.md">Contributing</a></li>
+        <li><a href="https://github.com/MatthewSaintBull/freenapse-web">This site’s source</a></li>
+      </ul>
+    </div>
+    <div class="footer__legal">
+      <span>Copyright 2026 Matteo Santoro</span>
+      <span>Use at your own risk: freenapse changes what is stored in the mouse’s onboard memory.</span>
+      <span>Page built <time datetime="{{build_date}}">{{build_date_text}}</time></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
