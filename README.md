@@ -34,7 +34,7 @@ of the settings window. It was built with the
 [Hallmark](https://www.usehallmark.com) design skill; the stamp at the top of
 `src/style.css` records the decisions.
 
-## Licence
+## License
 
 MIT, the same as the app. The screenshots show freenapse itself. Razer, Razer
 Synapse, Viper, HyperSpeed and HyperPolling are trademarks of Razer Inc.;
