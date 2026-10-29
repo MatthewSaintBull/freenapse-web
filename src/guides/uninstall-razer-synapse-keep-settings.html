@@ -1,0 +1,72 @@
+<main id="main" class="doc">
+  <div class="container">
+    <article class="guide">
+      <div class="doc__head">
+        <p class="crumb"><a href="/guides/">Guides</a></p>
+        <h1>Uninstall Razer Synapse and keep your mouse settings</h1>
+        <p class="lead">The settings are in the mouse, not in Synapse. Write them once with freenapse, then remove Synapse 4; nothing on the mouse changes.</p>
+      </div>
+
+      <section aria-labelledby="h-steps">
+        <h2 id="h-steps">In this order</h2>
+        <ol class="steps">
+          <li><div>
+            <h3>Confirm the mouse answers, with Synapse still installed</h3>
+            <pre class="code"><span class="k">freenapse status</span></pre>
+            <p>Run it once from the folder where you put <a href="{{download_url}}">freenapse.exe</a>. It prints what Synapse left stored in the mouse: DPI stages, polling rate, buttons, sensor and power settings. Keep moving the mouse while it runs.</p>
+          </div></li>
+          <li><div>
+            <h3>Write the settings you want</h3>
+            <pre class="code"><span class="k">freenapse config</span>    <span class="c"># a config file built from those settings; edit it if you like</span>
+<span class="k">freenapse apply</span>     <span class="c"># write it to the mouse</span></pre>
+            <p>Or open <code>freenapse ui</code> and change things in the window; each control writes to the mouse as it changes. Quit Synapse from the tray before this step, or it will rewrite the values within about fifteen seconds.</p>
+          </div></li>
+          <li><div>
+            <h3>Uninstall Synapse</h3>
+            <p>Settings, Apps, Installed apps, then Razer Synapse. freenapse needs no Razer software or driver: it talks to the standard Windows HID stack.</p>
+          </div></li>
+          <li><div>
+            <h3>Optionally start the tray at login</h3>
+            <pre class="code"><span class="k">freenapse autostart on</span></pre>
+            <p>Only for the battery icon, quick DPI and polling switching, macros and per-game profiles. The onboard settings do not need it.</p>
+          </div></li>
+          <li><div>
+            <h3>Check</h3>
+            <pre class="code"><span class="k">freenapse status</span></pre>
+            <p>The same values as before. Tested here after Synapse 4’s silent uninstaller ran: status, apply, polling switching, button reads and the tray all kept working unchanged.</p>
+          </div></li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="h-leftovers">
+        <h2 id="h-leftovers">What the uninstaller leaves behind</h2>
+        <div class="card">
+          <dl class="rows">
+            <div><dt>Folders</dt><dd><code>C:\Program Files\Razer</code>, <code>C:\Program Files (x86)\Razer</code>, <code>C:\ProgramData\Razer</code> and <code>C:\Windows\Installer\Razer</code> stay, small and empty of anything that runs. Delete them by hand if you want.</dd></div>
+            <div><dt>Drivers</dt><dd>The signed Razer HID drivers stay in the Windows driver store. They are harmless and freenapse does not use them.</dd></div>
+            <div><dt>Processes and services</dt><dd>None. After the uninstall there was no Razer process, service, startup entry or uninstall entry left on the machine freenapse was written on.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section aria-labelledby="h-questions">
+        <h2 id="h-questions">Questions</h2>
+        <dl class="qa">
+          <div><dt>What do I lose?</dt><dd>Synapse’s software-only features: cloud profiles, Sensitivity Matcher, bindings that launch a program or type text, and firmware updates (run Razer’s updater once if a firmware ever needs it). Macros and per-game profiles are software features too, and the freenapse tray app provides them.</dd></div>
+          <div><dt>Can I reinstall Synapse later?</dt><dd>Yes. It rewrites every setting from its own profile the first time it sees the mouse. Nothing freenapse writes is permanent, and it never touches the firmware.</dd></div>
+          <div><dt>Do I have to uninstall it, or is quitting enough?</dt><dd>Quitting is enough for the mouse. Uninstalling gets the memory and the background CPU back and removes the account requirement. Running both for long is the one thing to avoid.</dd></div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="h-related">
+        <h2 id="h-related">Related</h2>
+        <div class="card">
+          <dl class="rows">
+            <div><dt><a href="/guides/set-dpi-polling-rate-without-synapse/">Set the DPI and polling rate without Synapse</a></dt><dd>The commands for step two, one by one.</dd></div>
+            <div><dt><a href="/guides/razer-synapse-alternatives/">Razer Synapse alternatives</a></dt><dd>What else exists, on Windows, Linux and in a browser.</dd></div>
+          </dl>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>

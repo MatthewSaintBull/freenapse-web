@@ -4,10 +4,16 @@ The website of [freenapse](https://github.com/MatthewSaintBull/freenapse), the
 Razer Viper V3 Pro configurator for Windows that replaces Razer Synapse. Two
 static pages, hosted on GitHub Pages at https://freenapse.app.
 
-* `src/index.html`, `src/changelog.html`, `src/404.html`: the page templates.
-  `{{version}}`, `{{download_url}}` and the other fields are filled at build
-  time from the GitHub releases of the app, so the download button always
-  points at the latest release and the changelog page lists every release.
+* `src/index.html`: the home page, a full template. `{{version}}`,
+  `{{download_url}}` and the other fields are filled at build time from the
+  GitHub releases of the app, so the download button always points at the
+  latest release. Its FAQ structured data is generated from the page's own
+  questions.
+* `src/_page.html`: the shared chrome (head, nav, footer) of every other page.
+  `src/changelog.html`, `src/guides.html`, `src/404.html` and
+  `src/guides/<slug>.html` are the `<main>` of each; the guides' titles,
+  descriptions and dates live in the `GUIDES` list of `build.py`, which also
+  emits their TechArticle, BreadcrumbList and FAQPage structured data.
 * `src/style.css`: one stylesheet, inlined into each page. Its tokens are the
   desktop app's design system (`design.md` here, `DESIGN.md` in the app).
 * `src/assets/`: the app's own captures in AVIF, WebP and PNG, the logo, the

@@ -1,0 +1,51 @@
+<main id="main" class="doc">
+  <div class="container">
+    <article class="guide">
+      <div class="doc__head">
+        <p class="crumb"><a href="/guides/">Guides</a></p>
+        <h1>Razer Synapse alternatives</h1>
+        <p class="lead">Four ways to configure a Razer mouse without running Synapse 4. Which one works depends on your operating system and your mouse; each row says what it does not do.</p>
+      </div>
+
+      <section aria-labelledby="h-table">
+        <h2 id="h-table">Side by side</h2>
+        <table class="table">
+          <thead><tr><th scope="col"><span class="visually-hidden">What</span></th><th scope="col">freenapse</th><th scope="col">OpenRazer and Polychromatic</th><th scope="col">Razer Synapse Web</th><th scope="col">Razer Synapse 4</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Runs on</th><td data-col="freenapse" class="us">Windows 10 and 11</td><td data-col="OpenRazer">Linux</td><td data-col="Synapse Web">Chrome, Edge and Opera (WebHID); Firefox does not support it</td><td data-col="Synapse 4">Windows</td></tr>
+            <tr><th scope="row">Devices</th><td data-col="freenapse" class="us">Viper V3 Pro, verified. Other Razer mice open read-only until an owner tests them</td><td data-col="OpenRazer">Hundreds of Razer devices; the Viper V3 Pro since OpenRazer 3.9.0</td><td data-col="Synapse Web">In the beta, three Huntsman V3 Pro keyboards; no mice yet</td><td data-col="Synapse 4">Every current Razer device</td></tr>
+            <tr><th scope="row">Sets</th><td data-col="freenapse" class="us">DPI stages, polling rate, buttons on both layers, Dynamic Sensitivity, lift-off, sleep and low power, dongle LED, pairing; macros and per-game profiles in the tray app</td><td data-col="OpenRazer">DPI, polling rate, lighting, battery, and more per device; no button remapping</td><td data-col="Synapse Web">A simplified set; Razer points to Synapse 4 for the rest</td><td data-col="Synapse 4">Everything, plus cloud profiles and Chroma</td></tr>
+            <tr><th scope="row">Afterwards</th><td data-col="freenapse" class="us">Nothing has to run. The tray app is optional, 10&nbsp;MB</td><td data-col="OpenRazer">A kernel driver and a daemon</td><td data-col="Synapse Web">A browser tab while you configure</td><td data-col="Synapse 4">11 Electron processes and 2 services, about 1.5&nbsp;GB</td></tr>
+            <tr><th scope="row">Account</th><td data-col="freenapse" class="us">None, no internet</td><td data-col="OpenRazer">None</td><td data-col="Synapse Web">Loads from the internet, then works offline for the session</td><td data-col="Synapse 4">Razer ID</td></tr>
+            <tr><th scope="row">License</th><td data-col="freenapse" class="us">MIT, free</td><td data-col="OpenRazer">GPL, free</td><td data-col="Synapse Web">Razer’s, free</td><td data-col="Synapse 4">Razer’s, free</td></tr>
+          </tbody>
+        </table>
+        <p class="code-caption">Sources: the <a href="https://openrazer.github.io/">OpenRazer</a> and <a href="https://polychromatic.app/">Polychromatic</a> sites, Razer’s <a href="https://www.razer.com/newsroom/product-news/synapse-web-beta">Synapse Web announcement</a> and <a href="https://mysupport.razer.com/app/answers/detail/a_id/20619">support page</a>, and the Synapse 4 numbers measured on one PC for the <a href="/">home page</a>.</p>
+      </section>
+
+      <section aria-labelledby="h-once">
+        <h2 id="h-once">The fifth option: set it once, remove everything</h2>
+        <p>The Viper V3 Pro keeps its settings in onboard memory. Whatever tool writes them, the mouse keeps working the same way afterwards with nothing installed, on Windows, Linux or a Mac. So a Mac user can configure the mouse once on a Windows PC with freenapse, or on Linux with OpenRazer, and never run anything on the Mac. What you give up is the software-side extras: battery in the tray, per-game switching, macros.</p>
+      </section>
+
+      <section aria-labelledby="h-questions">
+        <h2 id="h-questions">Questions</h2>
+        <dl class="qa">
+          <div><dt>Is freenapse a Razer Synapse alternative for every Razer mouse?</dt><dd>No. It is verified on one mouse, the Viper V3 Pro, wired and on its dongle. Other Razer mice are detected and opened read-only; <code>freenapse probe</code> prints what they answer, and an issue or pull request with that output is how a mouse gets added.</dd></div>
+          <div><dt>What about Synapse 3?</dt><dd>Razer’s older app still supports the mouse, and reviewers have found it detected the Viper V3 Pro when Synapse 4 would not. It is still Razer’s software, with the account and the background services, and Razer is moving devices to Synapse 4.</dd></div>
+          <div><dt>Does OpenRazer work on Windows?</dt><dd>No, it is a Linux kernel driver. On Windows the choices are Razer’s own software, Synapse Web for the devices it supports, or freenapse for the Viper V3 Pro.</dd></div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="h-related">
+        <h2 id="h-related">Related</h2>
+        <div class="card">
+          <dl class="rows">
+            <div><dt><a href="/guides/uninstall-razer-synapse-keep-settings/">Uninstall Razer Synapse and keep your settings</a></dt><dd>The order to do it in on Windows.</dd></div>
+            <div><dt><a href="/guides/set-dpi-polling-rate-without-synapse/">Set the DPI and polling rate without Synapse</a></dt><dd>The commands, with what the mouse does with each value.</dd></div>
+          </dl>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>

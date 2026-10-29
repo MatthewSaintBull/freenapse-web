@@ -1,0 +1,56 @@
+<main id="main" class="doc">
+  <div class="container">
+    <article class="guide">
+      <div class="doc__head">
+        <p class="crumb"><a href="/guides/">Guides</a></p>
+        <h1>Viper V3 Pro settings not saving to onboard memory</h1>
+        <p class="lead">The mouse stores everything itself. When a setting does not stick, either something is rewriting it or the write never reached the mouse. Here is how to tell which.</p>
+      </div>
+
+      <section aria-labelledby="h-read">
+        <h2 id="h-read">Read the mouse, not the app</h2>
+        <pre class="code"><span class="k">freenapse status</span></pre>
+        <p>This asks the mouse what it holds right now and prints it: DPI stages and the active one, polling rate, the button assignments on both layers, Dynamic Sensitivity, lift-off mode, sleep timeout, low power threshold, battery. It is the ground truth. If <code>status</code> shows your value, the mouse has it, whatever any app displays. If it does not, one of the four causes below applies.</p>
+      </section>
+
+      <section aria-labelledby="h-causes">
+        <h2 id="h-causes">The four reasons a setting does not stick</h2>
+        <div class="card">
+          <dl class="rows">
+            <div><dt>Synapse is still running</dt><dd>While Razer Synapse runs in the background it rewrites the settings it thinks it owns within about fifteen seconds, so anything written by another program appears to revert. Quit it from the tray, or <a href="/guides/uninstall-razer-synapse-keep-settings/">uninstall it</a>. Do not run both for long.</dd></div>
+            <div><dt>The mouse was asleep</dt><dd>The wireless Viper V3 Pro stops answering the dongle after a few seconds without input, and a write sent then is lost. Keep moving the mouse while a command runs. The tray app and the settings window keep the change pending and write it when the mouse wakes; the status line under the content says so.</dd></div>
+            <div><dt>The config file was edited but not applied</dt><dd>Changes in <code>config.toml</code> reach the mouse only with <code>freenapse apply</code>. The settings window and the CLI commands write immediately; the file is for edits by hand and for carrying a setup to another PC.</dd></div>
+            <div><dt>It was never an onboard setting</dt><dd>Some of what Synapse shows is not stored in the mouse at all. On the Viper V3 Pro, macros, per-game profiles, the in-game polling rate and software bindings such as launching a program are played by the software and vanish when it is not running. The mouse has no macro memory. freenapse does the same for macros and per-game profiles, through the tray app.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section aria-labelledby="h-fix">
+        <h2 id="h-fix">Write it again and check</h2>
+        <pre class="code"><span class="k">freenapse apply</span>     <span class="c"># write the config file to the mouse</span>
+<span class="k">freenapse status</span>    <span class="c"># read it back</span>
+<span class="k">freenapse import</span>    <span class="c"># the other way: rebuild the config from what the mouse holds</span></pre>
+        <p>One value is an exception: the asymmetric cut-off levels (lift-off and landing). The mouse accepts them but cannot read them back on firmware 1.11, so <code>status</code> cannot show them and freenapse rewrites them on every apply. Smart Tracking at 1, 2 or 3&nbsp;mm reads back normally.</p>
+      </section>
+
+      <section aria-labelledby="h-questions">
+        <h2 id="h-questions">Questions</h2>
+        <dl class="qa">
+          <div><dt>Does the Viper V3 Pro have onboard memory?</dt><dd>Yes, one profile. It holds the DPI stages, the polling rate, the button assignments on the normal and Hypershift layers, Dynamic Sensitivity, the lift-off setting, the idle sleep timeout and the low power threshold. It holds a single profile and refuses the others, and it has no macro memory.</dd></div>
+          <div><dt>Do I need freenapse running to keep the settings?</dt><dd>No. Once written, the settings are in the mouse and work on any PC with nothing installed. The tray app adds the battery icon, quick switching, macros and per-game profiles, which are software features by nature.</dd></div>
+          <div><dt>Can I see the exact bytes the mouse answers?</dt><dd><code>freenapse probe</code> prints every read with its command and argument bytes, serial numbers masked. It is also what to paste into an issue for a mouse other than the Viper V3 Pro.</dd></div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="h-related">
+        <h2 id="h-related">Related</h2>
+        <div class="card">
+          <dl class="rows">
+            <div><dt><a href="/guides/set-dpi-polling-rate-without-synapse/">Set the DPI and polling rate without Synapse</a></dt><dd>The five commands, and what the mouse does with each value.</dd></div>
+            <div><dt><a href="/guides/uninstall-razer-synapse-keep-settings/">Uninstall Razer Synapse and keep your settings</a></dt><dd>Remove the program that keeps rewriting the mouse.</dd></div>
+          </dl>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>

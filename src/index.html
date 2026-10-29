@@ -55,15 +55,7 @@
       "author": { "@type": "Person", "name": "Matteo Santoro", "url": "https://github.com/MatthewSaintBull" },
       "sameAs": ["https://github.com/MatthewSaintBull/freenapse"]
     },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        { "@type": "Question", "name": "Is it safe to use freenapse on a Viper V3 Pro?", "acceptedAnswer": { "@type": "Answer", "text": "freenapse writes the same HID feature reports Synapse does and reads every value back. It cannot read or change the firmware. There is no warranty, and Razer will not support a mouse configured this way." } },
-        { "@type": "Question", "name": "Can I go back to Razer Synapse?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Reinstall Synapse and it rewrites every setting from its own profile. Or delete freenapse’s config file and run freenapse apply for the defaults." } },
-        { "@type": "Question", "name": "Do I have to uninstall Synapse?", "acceptedAnswer": { "@type": "Answer", "text": "Quit it at least. While Synapse runs in the background it rewrites the settings it thinks it owns within about fifteen seconds, so anything freenapse sets appears not to stick." } },
-        { "@type": "Question", "name": "Why does a command sometimes get no answer?", "acceptedAnswer": { "@type": "Answer", "text": "The wireless mouse stops answering the dongle after a while idle. Keep moving it while a command runs; the tray app knows this and retries on its own." } }
-      ]
-    }
+    {{index_faq}}
   ]
 }
 </script>
@@ -78,8 +70,7 @@
     </a>
     <nav aria-label="Site">
       <ul class="nav__links">
-        <li><a href="/changelog/">Changelog</a></li>
-        <li><a href="https://github.com/MatthewSaintBull/freenapse">GitHub</a></li>
+        {{nav_links}}
       </ul>
     </nav>
   </div>
@@ -112,8 +103,8 @@
   <section class="tight" aria-labelledby="h-measured">
     <div class="container">
       <div class="head head--split">
-        <h2 id="h-measured">Measured on one PC, same mouse</h2>
-        <p class="lead">Synapse 4 beside freenapse on the machine it was written on, with the Viper V3 Pro on its HyperPolling dongle.</p>
+        <h2 id="h-measured">Razer Synapse 4 and freenapse, measured on one PC</h2>
+        <p class="lead">Side by side on the machine freenapse was written on, with the same Viper V3 Pro on its HyperPolling dongle.</p>
       </div>
       <table class="table">
         <thead><tr><th scope="col"><span class="visually-hidden">What</span></th><th scope="col">Razer Synapse 4</th><th scope="col">freenapse</th></tr></thead>
@@ -131,8 +122,8 @@
   <section aria-labelledby="h-stored">
     <div class="container">
       <div class="head">
-        <h2 id="h-stored">Stored in the mouse itself</h2>
-        <p class="lead">Every setting goes to the onboard memory, so it survives a reboot and follows the mouse to a PC with nothing installed.</p>
+        <h2 id="h-stored">DPI, polling rate and buttons, stored in the mouse</h2>
+        <p class="lead">Every setting goes to the Viper V3 Pro’s onboard memory, so it survives a reboot and follows the mouse to a PC with nothing installed. <a href="/guides/set-dpi-polling-rate-without-synapse/">How to set them</a>.</p>
       </div>
       <div class="card">
         <dl class="rows">
@@ -150,7 +141,7 @@
   <section class="tight" aria-labelledby="h-live">
     <div class="container">
       <div class="head">
-        <h2 id="h-live">Changes land as you make them</h2>
+        <h2 id="h-live">Written to the mouse as you change them</h2>
         <p class="lead">There is no apply button. Each control writes its setting to the mouse the moment it changes and reads it back.</p>
       </div>
       <figure class="capture">
@@ -198,13 +189,14 @@ macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not 
   <section class="tight" aria-labelledby="h-questions">
     <div class="container">
       <div class="head">
-        <h2 id="h-questions">Before you replace Synapse</h2>
+        <h2 id="h-questions">Before you replace Razer Synapse</h2>
       </div>
       <dl class="qa">
         <div><dt>Is it safe?</dt><dd>freenapse writes the same HID feature reports Synapse does and reads every value back. It cannot read or change the firmware. There is no warranty, and Razer will not support a mouse configured this way.</dd></div>
         <div><dt>Can I go back?</dt><dd>Yes. Reinstall Synapse and it rewrites every setting from its own profile. Or delete the config file and run <code>freenapse apply</code> for the defaults.</dd></div>
-        <div><dt>Do I have to uninstall Synapse?</dt><dd>Quit it at least. While it runs in the background it rewrites the settings it thinks it owns within about fifteen seconds, so anything freenapse sets appears not to stick.</dd></div>
+        <div><dt>Do I have to uninstall Synapse?</dt><dd>Quit it at least. While it runs in the background it rewrites the settings it thinks it owns within about fifteen seconds, so anything freenapse sets appears not to stick. <a href="/guides/uninstall-razer-synapse-keep-settings/">How to uninstall it and keep the settings</a>.</dd></div>
         <div><dt>Why does a command sometimes get no answer?</dt><dd>The wireless mouse stops answering the dongle after a while idle. Keep moving it while a command runs; the tray app knows this and retries on its own.</dd></div>
+        <div><dt>Is it a Razer Synapse alternative for every Razer mouse?</dt><dd>No. It is a Razer Synapse alternative for the Viper V3 Pro on Windows, verified on that one mouse. Other Razer mice open read-only until an owner tests them. The <a href="/guides/razer-synapse-alternatives/">guide to Synapse alternatives</a> covers Linux and the other options.</dd></div>
       </dl>
     </div>
   </section>
@@ -247,6 +239,7 @@ macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not 
       <ul class="footer__links">
         <li><a href="https://github.com/MatthewSaintBull/freenapse">Source code</a></li>
         <li><a href="https://github.com/MatthewSaintBull/freenapse/releases">Releases</a></li>
+        <li><a href="/guides/">Guides</a></li>
         <li><a href="/changelog/">Changelog</a></li>
         <li><a href="https://github.com/MatthewSaintBull/freenapse/issues">Issues</a></li>
         <li><a href="https://github.com/MatthewSaintBull/freenapse/blob/main/LICENSE">License</a></li>

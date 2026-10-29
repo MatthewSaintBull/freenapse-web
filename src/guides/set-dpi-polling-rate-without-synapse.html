@@ -1,0 +1,73 @@
+<main id="main" class="doc">
+  <div class="container">
+    <article class="guide">
+      <div class="doc__head">
+        <p class="crumb"><a href="/guides/">Guides</a></p>
+        <h1>Set the Viper V3 Pro DPI and polling rate without Synapse</h1>
+        <p class="lead">Both values live in the mouse’s onboard memory. Write them once with freenapse and they stay set with nothing running, on any PC.</p>
+      </div>
+
+      <section aria-labelledby="h-steps">
+        <h2 id="h-steps">Five commands, no installer</h2>
+        <ol class="steps">
+          <li><div>
+            <h3>Get freenapse.exe and quit Synapse</h3>
+            <p><a href="{{download_url}}">Download freenapse {{version}}</a>, one file of {{exe_size_mb}}&nbsp;MB, and put it anywhere. If Razer Synapse is installed, quit it from the tray first: while it runs in the background it rewrites the settings it thinks it owns within about fifteen seconds.</p>
+          </div></li>
+          <li><div>
+            <h3>Read what the mouse has stored</h3>
+            <pre class="code"><span class="k">freenapse status</span></pre>
+            <p>Prints the DPI stages, the active stage and the polling rate straight from the mouse. Keep moving the mouse while a command runs: the wireless Viper V3 Pro stops answering the dongle after a few seconds idle.</p>
+          </div></li>
+          <li><div>
+            <h3>Set the DPI</h3>
+            <pre class="code"><span class="k">freenapse dpi 1600</span>                      <span class="c"># live DPI, 100 to 35000 in steps of 1</span>
+<span class="k">freenapse dpi 1600 800</span>                  <span class="c"># independent X and Y</span>
+<span class="k">freenapse stages 2 400 800 1600 3200</span>    <span class="c"># four stages, the second one active</span></pre>
+            <p>Up to five stages. The DPI button under the mouse cycles through them, with no software involved.</p>
+          </div></li>
+          <li><div>
+            <h3>Set the polling rate</h3>
+            <pre class="code"><span class="k">freenapse polling 4000</span></pre>
+            <p>Wired: 125, 500 or 1000&nbsp;Hz. Through the dongle: 125 to 8000&nbsp;Hz, where 4000 and 8000 need the HyperPolling dongle and use more battery. The rate is stored like everything else.</p>
+          </div></li>
+          <li><div>
+            <h3>Or use the window</h3>
+            <pre class="code"><span class="k">freenapse ui</span></pre>
+            <p>The Performance page has the same controls: a slider and a number box per stage, the active stage, independent X and Y, and the polling rate slider. There is no apply button; each control writes to the mouse the moment it changes and reads the value back.</p>
+          </div></li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="h-mouse">
+        <h2 id="h-mouse">What the mouse does with it</h2>
+        <div class="card">
+          <dl class="rows">
+            <div><dt>DPI stages</dt><dd>Stored in the mouse’s onboard profile as up to five stages plus the active one. The live DPI and the stage table are two separate settings in the mouse; <code>freenapse status</code> shows both.</dd></div>
+            <div><dt>Polling rate</dt><dd>One command to the dongle, or the classic command when wired. The tray app can raise the rate only while a game is in the foreground (<code>polling.game_rate</code> in the config) and lower it again when the game ends.</dd></div>
+            <div><dt>Afterwards</dt><dd>Close freenapse. The settings survive reboots and follow the mouse to any PC. The tray app only adds the battery icon, quick switching and per-game profiles.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section aria-labelledby="h-questions">
+        <h2 id="h-questions">Questions</h2>
+        <dl class="qa">
+          <div><dt>Do I need Synapse installed at all?</dt><dd>No. freenapse talks to the standard Windows HID stack and needs no Razer driver or service. If Synapse is still installed, quit it; the <a href="/guides/uninstall-razer-synapse-keep-settings/">uninstall guide</a> covers removing it without losing anything.</dd></div>
+          <div><dt>The command printed “no answer”.</dt><dd>The mouse was asleep. Move it and run the command again. The tray app and the settings window keep the change pending and write it on their own when the mouse wakes.</dd></div>
+          <div><dt>Can the DPI be different per game?</dt><dd>Yes, with the tray app running: a profile per game sets a DPI stage, a polling rate and a button layout while that game is in the foreground. The games installed through Steam, Epic, GOG and the other launchers are listed on the Games page of the window.</dd></div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="h-related">
+        <h2 id="h-related">Related</h2>
+        <div class="card">
+          <dl class="rows">
+            <div><dt><a href="/guides/settings-not-saving-onboard-memory/">Settings not saving to onboard memory</a></dt><dd>When a value appears not to stick, and how to read what the mouse holds.</dd></div>
+            <div><dt><a href="/guides/uninstall-razer-synapse-keep-settings/">Uninstall Razer Synapse and keep your settings</a></dt><dd>The order to do it in, and what the uninstaller leaves behind.</dd></div>
+          </dl>
+        </div>
+      </section>
+    </article>
+  </div>
+</main>
