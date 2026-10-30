@@ -33,14 +33,14 @@
   "draft": false,
   "immutable": false,
   "prerelease": false,
-  "created_at": "2026-10-30T09:56:48Z",
-  "updated_at": "2026-10-30T09:58:22Z",
+  "created_at": "2026-10-30T10:32:20Z",
+  "updated_at": "2026-10-30T10:36:01Z",
   "published_at": "2026-10-30T09:58:22Z",
   "assets": [
    {
-    "url": "https://api.github.com/repos/MatthewSaintBull/freenapse/releases/assets/691672231",
-    "id": 691672231,
-    "node_id": "RA_kwDOVbD_8M4pOhSn",
+    "url": "https://api.github.com/repos/MatthewSaintBull/freenapse/releases/assets/691764721",
+    "id": 691764721,
+    "node_id": "RA_kwDOVbD_8M4pO33x",
     "name": "freenapse.exe",
     "label": "",
     "uploader": {
@@ -67,16 +67,16 @@
     "content_type": "application/x-msdos-program",
     "state": "uploaded",
     "size": 1104384,
-    "digest": "sha256:f6c32ca8e2bd9a71b704b02fa907fd68b34b78ce3757e1ce17ab583b6172f981",
+    "digest": "sha256:59fd3f2d0a99d0fd08d86e04df37963bb20585083520aaecf49b8fd10fe80077",
     "download_count": 0,
-    "created_at": "2026-10-30T09:58:21Z",
-    "updated_at": "2026-10-30T09:58:21Z",
+    "created_at": "2026-10-30T10:36:01Z",
+    "updated_at": "2026-10-30T10:36:01Z",
     "browser_download_url": "https://github.com/MatthewSaintBull/freenapse/releases/download/v0.2.0/freenapse.exe"
    },
    {
-    "url": "https://api.github.com/repos/MatthewSaintBull/freenapse/releases/assets/691672232",
-    "id": 691672232,
-    "node_id": "RA_kwDOVbD_8M4pOhSo",
+    "url": "https://api.github.com/repos/MatthewSaintBull/freenapse/releases/assets/691764716",
+    "id": 691764716,
+    "node_id": "RA_kwDOVbD_8M4pO33s",
     "name": "freenapse.exe.sha256",
     "label": "",
     "uploader": {
@@ -103,16 +103,16 @@
     "content_type": "application/octet-stream",
     "state": "uploaded",
     "size": 80,
-    "digest": "sha256:cc5ef05fed87648b4bbc267ebb57f9c85d18918020a619d2626afc9356114ccc",
+    "digest": "sha256:b01f16ce791f2bd4e9df12ba04df0955a8f06729ebafca9f87adebee7dad4b14",
     "download_count": 0,
-    "created_at": "2026-10-30T09:58:21Z",
-    "updated_at": "2026-10-30T09:58:21Z",
+    "created_at": "2026-10-30T10:36:01Z",
+    "updated_at": "2026-10-30T10:36:01Z",
     "browser_download_url": "https://github.com/MatthewSaintBull/freenapse/releases/download/v0.2.0/freenapse.exe.sha256"
    }
   ],
   "tarball_url": "https://api.github.com/repos/MatthewSaintBull/freenapse/tarball/v0.2.0",
   "zipball_url": "https://api.github.com/repos/MatthewSaintBull/freenapse/zipball/v0.2.0",
-  "body": "**Full Changelog**: https://github.com/MatthewSaintBull/freenapse/compare/v0.1.0...v0.2.0"
+  "body": "- A device table (`src/device.rs`, `DeviceSpec`) drives what freenapse does per\n  product id: transaction id, polling command, polling rates, DPI maximum,\n  sensor tracking page, dongle pairing. The Viper V3 Pro rows carry exactly the\n  previous behaviour; the other rows take their facts from OpenRazer's device\n  list and are unverified.\n- Any Razer mouse with the 90-byte control report now opens. One that is not in\n  the table, or is there unverified, is read-only: `status` and `probe` work,\n  every write is refused with a message that says how to help. `[device]\n  allow_unverified = true` in the config lifts that at the owner's risk.\n- `freenapse probe`: every read the mouse answers, raw, as a code block to\n  paste into an issue so a table row can be written for a new mouse.\n- The settings window hides the Calibration page and the dongle pairing and\n  LED controls on mice where the table does not know them.\n- `FEATURES.md` lists the supported mice with who verified them;\n  `CONTRIBUTING.md` describes how to add one.\n- `freenapse version`; the version is also in `help`, the tray tooltip and the\n  gear page of the settings window.\n- A crash writes `crash.txt` next to the config file (version, message, source\n  location, Windows build). The tray and the settings window say so in a\n  message box before they stop.\n- `--log` or `--log=<file>` on any command, and on the tray, records every\n  exchange with the mouse (command, transaction id, timing, result; no input)\n  in `hid.log` next to the config file. The `FREENAPSE_HIDLOG` environment\n  variable it replaces still works.\n- Issue templates for a bug and for adding a mouse.\n\n`freenapse.exe` below is the whole program; `freenapse.exe.sha256` is its checksum.\n"
  },
  {
   "url": "https://api.github.com/repos/MatthewSaintBull/freenapse/releases/427239587",
