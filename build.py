@@ -282,7 +282,7 @@ def main():
                                      "index_faq": json.dumps(index_faq, indent=4, ensure_ascii=False)}, name="index.html"))
     write("changelog/index.html", page(
         fill(src("changelog.html"), name="changelog.html"), "/changelog/", "freenapse changelog",
-        "Every freenapse release and what changed in it, newest first, taken from the GitHub releases of the Razer Viper V3 Pro configurator."))
+        "Every freenapse release and what changed in it, newest first, taken from the GitHub releases of the Razer mouse configurator."))
     write("404.html", page(
         fill(src("404.html"), name="404.html"), "/404.html", "Page not found, freenapse",
         "There is nothing at this address.", robots='<meta name="robots" content="noindex">\n'))

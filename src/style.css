@@ -132,6 +132,15 @@ main > section.loose { padding-block: var(--section-gap-l); }
 .table td { color: var(--color-ink-2); }
 .table td.us { color: var(--color-ink); }
 .table tr > :last-child { padding-right: 0; }
+.table--mice tbody th { width: 24%; }
+.table--mice td.num { white-space: nowrap; }
+.table td.ok { color: var(--color-accent); font-weight: 600; }
+.table td.exp { color: var(--color-ink); }
+.table-note { margin-top: var(--space-lg); font-size: var(--text-sm); color: var(--color-ink-2); max-width: 78ch; }
+.table-note strong { color: var(--color-ink); font-weight: 600; }
+.table-note em { font-style: normal; color: var(--color-ink); }
+.band .table-note + .split { margin-top: var(--space-2xl); }
+.split__text h3 { margin-bottom: var(--space-2xs); }
 
 /* The settings-row card from the app: title left, description right, a divider between rows */
 .card { background: var(--color-paper-2); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); box-shadow: inset 0 1px 0 var(--color-highlight); padding: 0 var(--space-lg); }
@@ -148,6 +157,7 @@ main > section.loose { padding-block: var(--section-gap-l); }
 .split__text { display: grid; gap: var(--space-lg); }
 .split__text h2 { margin-bottom: var(--space-2xs); }
 .split__text p { color: var(--color-ink-2); }
+.split__text pre + pre { margin-top: var(--space-md); }
 .split__text p strong { color: var(--color-ink); font-weight: 600; }
 
 pre.code { margin: 0; padding: var(--space-lg); background: var(--color-paper-2); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); box-shadow: inset 0 1px 0 var(--color-highlight); overflow-x: auto; line-height: 1.6; color: var(--color-ink); tab-size: 4; }

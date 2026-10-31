@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>freenapse: Razer Viper V3 Pro settings without Synapse</title>
-<meta name="description" content="freenapse configures a Razer Viper V3 Pro on Windows without Razer Synapse: DPI, polling rate, buttons and macros written to the mouse’s onboard memory. One 1 MB file, open source.">
+<title>freenapse: Razer mouse settings without Synapse</title>
+<meta name="description" content="freenapse configures a Razer mouse on Windows without Razer Synapse: DPI, polling rate, buttons and macros written to the mouse’s onboard memory. Verified on the Viper V3 Pro, more mice one probe at a time. One 1 MB file, open source.">
 <link rel="canonical" href="https://freenapse.app/">
 <meta name="theme-color" content="#111112">
 <meta name="color-scheme" content="dark">
 <meta name="author" content="Matteo Santoro">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="freenapse">
-<meta property="og:title" content="freenapse: Razer Viper V3 Pro settings without Synapse">
+<meta property="og:title" content="freenapse: Razer mouse settings without Synapse">
 <meta property="og:description" content="One 1 MB program writes DPI, polling rate, buttons and macros into the mouse’s own memory. No installer, no account, no Razer software.">
 <meta property="og:url" content="https://freenapse.app/">
 <meta property="og:image" content="https://freenapse.app/assets/og.jpg">
@@ -19,7 +19,7 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="The freenapse settings window on the Customize page: button assignment with the mouse drawing">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="freenapse: Razer Viper V3 Pro settings without Synapse">
+<meta name="twitter:title" content="freenapse: Razer mouse settings without Synapse">
 <meta name="twitter:description" content="One 1 MB program writes DPI, polling rate, buttons and macros into the mouse’s own memory. No installer, no account, no Razer software.">
 <meta name="twitter:image" content="https://freenapse.app/assets/og.jpg">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -39,7 +39,7 @@
       "@id": "https://freenapse.app/#app",
       "name": "freenapse",
       "url": "https://freenapse.app/",
-      "description": "Configure a Razer Viper V3 Pro from Windows without Razer Synapse: DPI stages, polling rate, button assignment, macros, sensor and power settings written to the mouse’s onboard memory.",
+      "description": "Configure a Razer mouse from Windows without Razer Synapse: DPI stages, polling rate, button assignment, macros, sensor and power settings written to the mouse’s onboard memory. Verified on the Viper V3 Pro; other Razer mice open read-only until an owner tests them.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Windows 10, Windows 11",
       "softwareVersion": "{{version}}",
@@ -80,14 +80,14 @@
   <section class="hero" aria-labelledby="h-hero">
     <div class="container hero__grid">
       <div class="hero__text">
-        <h1 id="h-hero">Your Viper V3 Pro, without Synapse</h1>
-        <p class="lead">One 1&nbsp;MB program writes the settings into the mouse’s own memory.</p>
+        <h1 id="h-hero">Your Razer mouse, without Synapse</h1>
+        <p class="lead">One 1&nbsp;MB program writes DPI, polling rate and buttons into the mouse’s own memory. Verified on the Viper V3 Pro; <a href="#h-mice">other Razer mice</a> join one probe at a time.</p>
         <div>
           <div class="actions">
             <a class="btn" href="{{download_url}}">Download freenapse {{version}}</a>
             <a class="btn btn--quiet" href="https://github.com/MatthewSaintBull/freenapse">Source on GitHub</a>
           </div>
-          <p class="fineprint">For Windows 10 and 11. {{exe_size_mb}}&nbsp;MB, no installer, no account. <a href="{{sha_url}}">SHA-256 checksum</a>.</p>
+          <p class="fineprint">For Windows 10 and 11. {{exe_size_mb}}&nbsp;MB, no installer, no account. <a href="{{sha_url}}">SHA-256 checksum</a>. The file is not code-signed, so Windows asks once on first run: choose “More info”, then “Run anyway”.</p>
         </div>
       </div>
       <figure class="capture hero__visual">
@@ -123,13 +123,13 @@
     <div class="container">
       <div class="head">
         <h2 id="h-stored">DPI, polling rate and buttons, stored in the mouse</h2>
-        <p class="lead">Every setting goes to the Viper V3 Pro’s onboard memory, so it survives a reboot and follows the mouse to a PC with nothing installed. <a href="/guides/set-dpi-polling-rate-without-synapse/">How to set them</a>.</p>
+        <p class="lead">Every setting goes to the mouse’s onboard memory, so it survives a reboot and follows the mouse to a PC with nothing installed. <a href="/guides/set-dpi-polling-rate-without-synapse/">How to set them</a>.</p>
       </div>
       <div class="card">
         <dl class="rows">
           <div><dt>DPI</dt><dd>Up to 5 stages, independent X and Y, 100 to 35000 in steps of 1, and the stage the mouse starts on.</dd></div>
           <div><dt>Polling rate</dt><dd>125 to 8000&nbsp;Hz. 4000 and 8000 need the HyperPolling dongle; the tray app can raise the rate only while a game runs.</dd></div>
-          <div><dt>Buttons</dt><dd>All seven on the normal and Hypershift layers: mouse functions, keys with modifiers, media keys, DPI stage and cycle, Turbo, macros, disabled.</dd></div>
+          <div><dt>Buttons</dt><dd>All seven on the normal and Hypershift layers: mouse functions, keys with modifiers, media keys, DPI stage and cycle, Turbo, macros, disabled. Program and Text buttons are played by the tray app, below.</dd></div>
           <div><dt>Dynamic Sensitivity</dt><dd>The onboard acceleration curve: Classic, Natural, Jump, or the points you drag yourself.</dd></div>
           <div><dt>Sensor</dt><dd>Smart Tracking at 1, 2 or 3&nbsp;mm, or the asymmetric cut-off with lift-off and landing levels, plus angle correction.</dd></div>
           <div><dt>Power and dongle</dt><dd>Idle sleep timeout, low power mode threshold, the dongle’s indicator LED, pairing.</dd></div>
@@ -156,15 +156,38 @@
   </section>
 
   <section class="band tight" aria-labelledby="h-mice">
-    <div class="container split">
-      <div class="split__text">
-        <h2 id="h-mice">Built on one mouse, for now</h2>
-        <p>freenapse was written and tested against a single Razer Viper V3 Pro, wired and through its HyperPolling dongle. <strong>Those are the only two product ids it writes to.</strong></p>
-        <p>Any other Razer mouse opens read-only: <code>freenapse status</code> and <code>freenapse probe</code> work, and every write is refused with a message that says how to help.</p>
-        <p><strong>To add yours,</strong> paste the probe output into an issue, then open a pull request with your row in <code>src/device.rs</code> once it is tested on your mouse. <a href="https://github.com/MatthewSaintBull/freenapse/blob/main/CONTRIBUTING.md#adding-a-mouse">CONTRIBUTING.md</a> has the four steps; <a href="https://github.com/MatthewSaintBull/freenapse/blob/main/FEATURES.md#supported-mice">FEATURES.md</a> lists the rows waiting for an owner.</p>
+    <div class="container">
+      <div class="head head--split">
+        <h2 id="h-mice">Which Razer mice, and how far each one goes</h2>
+        <p class="lead">freenapse was written on a Viper V3 Pro and writes to it without asking. Every other Razer mouse opens and is read, and is written to only once an owner has tested it. This table is the program’s own device list.</p>
       </div>
-      <div>
-        <pre class="code" aria-label="Output of freenapse probe, abridged"><span class="k">freenapse probe</span>
+      <table class="table table--mice">
+        <thead><tr><th scope="col">Mouse</th><th scope="col">Product id</th><th scope="col">Polling</th><th scope="col">DPI up to</th><th scope="col">Status</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Viper V3 Pro, wired</th><td data-col="Product id" class="num">0x00C0</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">35000</td><td data-col="Status" class="ok">Verified, the author’s mouse</td></tr>
+          <tr><th scope="row">Viper V3 Pro, HyperSpeed or HyperPolling dongle</th><td data-col="Product id" class="num">0x00C1</td><td data-col="Polling">HyperPolling: 125 to 8000&nbsp;Hz, dongle pairing and LED</td><td data-col="DPI up to" class="num">35000</td><td data-col="Status" class="ok">Verified, the author’s mouse</td></tr>
+          <tr><th scope="row">DeathAdder V3 Pro, wired</th><td data-col="Product id" class="num">0x00B6</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status" class="exp">Experimental: DPI, polling, idle, low battery, buttons and Smart Tracking read back by an owner. No Dynamic Sensitivity or rotation. Writes need <code>allow_unverified</code></td></tr>
+          <tr><th scope="row">DeathAdder V3 Pro, wireless</th><td data-col="Product id" class="num">0x00B7</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">35000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">DeathAdder V4 Pro, wired or wireless</th><td data-col="Product id" class="num">0x00BE, 0x00BF</td><td data-col="Polling">HyperPolling: 125 to 8000&nbsp;Hz, pairing on the wireless id</td><td data-col="DPI up to" class="num">45000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">DeathAdder V3, wired 8K</th><td data-col="Product id" class="num">0x00B2</td><td data-col="Polling">HyperPolling: 125 to 8000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">Viper V2 Pro, wired or wireless</th><td data-col="Product id" class="num">0x00A5, 0x00A6</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">Viper V3 HyperSpeed</th><td data-col="Product id" class="num">0x00B8</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">Viper Mini SE, wired or wireless</th><td data-col="Product id" class="num">0x009E, 0x009F</td><td data-col="Polling">HyperPolling: 125, 500, 1000&nbsp;Hz wired, 125 to 8000&nbsp;Hz wireless, pairing</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">Viper 8KHz</th><td data-col="Product id" class="num">0x0091</td><td data-col="Polling">HyperPolling: 125, 500 to 8000&nbsp;Hz, addressed as a dongle</td><td data-col="DPI up to" class="num">20000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">Cobra Pro, wired or wireless</th><td data-col="Product id" class="num">0x00AF, 0x00B0</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">Basilisk V3 Pro, wired or wireless</th><td data-col="Product id" class="num">0x00AA, 0x00AB</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">HyperPolling wireless dongle, on its own</th><td data-col="Product id" class="num">0x00B3</td><td data-col="Polling">HyperPolling: 125 to 8000&nbsp;Hz, pairing</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">Any other Razer mouse</th><td data-col="Product id" class="num">any, vendor 0x1532</td><td data-col="Polling">classic assumed</td><td data-col="DPI up to" class="num">30000 assumed</td><td data-col="Status">Read-only: <code>status</code> and <code>probe</code> work, every write is refused</td></tr>
+        </tbody>
+      </table>
+      <p class="table-note"><strong>How they work.</strong> Every Razer mouse here speaks the same 90-byte control report; the rows differ in the polling command (<em>classic</em> takes three rates, <em>HyperPolling</em> seven, up to 8000&nbsp;Hz through the dongle), the DPI ceiling, and whether dongle pairing and the Focus Pro tracking page exist. Facts for the untested rows come from OpenRazer’s device list. An owner of an unverified mouse can set <code>[device] allow_unverified = true</code> in the config and write at their own risk; <code>freenapse probe</code> prints what the mouse answers.</p>
+      <div class="split">
+        <div class="split__text">
+          <h3>To add yours</h3>
+          <p>Run <code>freenapse probe</code>, paste the output into a <a href="https://github.com/MatthewSaintBull/freenapse/issues/new/choose">“New mouse” issue</a>, then test the writes on your mouse and open a pull request with its row in <code>src/device.rs</code>. <a href="https://github.com/MatthewSaintBull/freenapse/blob/main/CONTRIBUTING.md#adding-a-mouse">CONTRIBUTING.md</a> has the four steps; the wired DeathAdder V3 Pro row arrived exactly this way.</p>
+        </div>
+        <div>
+          <pre class="code" aria-label="Output of freenapse probe, abridged"><span class="k">freenapse probe</span>
 freenapse {{version}} probe
 vendor id 0x1532  product id 0x00c1
 table: Razer Viper V3 Pro (wireless) (verified)
@@ -181,7 +204,27 @@ polling hyperpolling  tid 1f 00/c0/01  status=02
                       = 1000 Hz
 polling classic       tid 1f 00/85/01  <span class="c">no answer (status 05 not supported)</span>
 macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not supported)</span></pre>
-        <p class="code-caption">Abridged. The real output has every read with its argument bytes, and masks serial numbers by default.</p>
+          <p class="code-caption">Abridged. The real output has every read with its argument bytes, and masks serial numbers by default.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-tray">
+    <div class="container">
+      <div class="head">
+        <h2 id="h-tray">The tray app does what the mouse cannot store</h2>
+        <p class="lead">One process, idle between battery reads. It plays the few things a mouse has no memory for, keeps the connection, and watches your config file.</p>
+      </div>
+      <div class="card">
+        <dl class="rows">
+          <div><dt>Program and Text buttons</dt><dd>A button starts a program, opens a file or a URL, or types a text with any characters in any keyboard layout. The mouse stores a spare key for it; the tray turns that key into the action, so these two need the tray running.</dd></div>
+          <div><dt>Games</dt><dd>A game in the foreground can switch the polling rate, the DPI stage and the buttons; everything goes back when it closes. Steam, Epic, GOG, EA, Battle.net, Riot, Ubisoft and Xbox libraries are found on their own.</dd></div>
+          <div><dt>Plug in, wake up, carry on</dt><dd>The tray reconnects the moment the dongle is plugged in or the PC resumes from sleep, and greys its icon while the mouse is away.</dd></div>
+          <div><dt>Edit the file, skip the apply</dt><dd>It watches <code>config.toml</code> and writes a hand edit to the mouse within a second. The settings window, the CLI and your editor all work on the same file.</dd></div>
+          <div><dt>Battery</dt><dd>The level in the tooltip, one read a minute, and a notification at the threshold you choose.</dd></div>
+          <div><dt>Updates, on your terms</dt><dd>Once a day it asks GitHub for the latest release and, when it is newer, says so once and adds the link to its menu. One request, nothing about you in it; <code>check_updates = false</code> turns it off.</dd></div>
+        </dl>
       </div>
     </div>
   </section>
@@ -196,7 +239,7 @@ macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not 
         <div><dt>Can I go back?</dt><dd>Yes. Reinstall Synapse and it rewrites every setting from its own profile. Or delete the config file and run <code>freenapse apply</code> for the defaults.</dd></div>
         <div><dt>Do I have to uninstall Synapse?</dt><dd>Quit it at least. While it runs in the background it rewrites the settings it thinks it owns within about fifteen seconds, so anything freenapse sets appears not to stick. <a href="/guides/uninstall-razer-synapse-keep-settings/">How to uninstall it and keep the settings</a>.</dd></div>
         <div><dt>Why does a command sometimes get no answer?</dt><dd>The wireless mouse stops answering the dongle after a while idle. Keep moving it while a command runs; the tray app knows this and retries on its own.</dd></div>
-        <div><dt>Is it a Razer Synapse alternative for every Razer mouse?</dt><dd>No. It is a Razer Synapse alternative for the Viper V3 Pro on Windows, verified on that one mouse. Other Razer mice open read-only until an owner tests them. The <a href="/guides/razer-synapse-alternatives/">guide to Synapse alternatives</a> covers Linux and the other options.</dd></div>
+        <div><dt>Is it a Razer Synapse alternative for every Razer mouse?</dt><dd>Not yet. It is verified on the Viper V3 Pro, experimental on the wired DeathAdder V3 Pro, and read-only on the other mice in the <a href="#h-mice">table above</a> until their owners test them. The <a href="/guides/razer-synapse-alternatives/">guide to Synapse alternatives</a> covers Linux and the other options.</dd></div>
       </dl>
     </div>
   </section>
@@ -210,6 +253,8 @@ macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not 
 <span class="k">freenapse apply</span>         <span class="c"># write your edits to the mouse</span>
 <span class="k">freenapse autostart on</span>  <span class="c"># tray icon: battery, DPI stage, polling rate</span></pre>
         <p>The same file is the tray app when started without arguments, the settings window with <code>freenapse ui</code>, and the CLI with any other command.</p>
+        <pre class="code"><span class="c"># or, with Scoop</span>
+<span class="k">scoop install</span> https://raw.githubusercontent.com/MatthewSaintBull/freenapse/main/packaging/scoop/freenapse.json</pre>
         <div>
           <div class="actions">
             <a class="btn btn--quiet" href="{{download_url}}">Download freenapse.exe, {{exe_size_mb}}&nbsp;MB</a>
@@ -234,7 +279,7 @@ macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not 
     <div class="footer__grid">
       <div>
         <a class="wordmark" href="/" aria-label="freenapse, home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#181818"/><path d="M41.26 17.74A17 17 0 1 0 46.26 22.74" fill="none" stroke="#1db954" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="14" r="4.5" fill="#3fd676"/></svg><span><b>free</b>napse</span></a>
-        <p>An independent open-source project by Matteo Santoro, MIT licensed. Not affiliated with, endorsed by or supported by Razer Inc. Razer, Razer Synapse, Viper, HyperSpeed and HyperPolling are trademarks of Razer Inc., named only to say which hardware the program works with.</p>
+        <p>An independent open-source project by Matteo Santoro, MIT licensed. Not affiliated with, endorsed by or supported by Razer Inc. Razer, Razer Synapse, Viper, DeathAdder, Basilisk, Cobra, HyperSpeed and HyperPolling are trademarks of Razer Inc., named only to say which hardware the program works with.</p>
       </div>
       <ul class="footer__links">
         <li><a href="https://github.com/MatthewSaintBull/freenapse">Source code</a></li>
