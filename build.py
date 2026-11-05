@@ -29,7 +29,7 @@ REPO = "MatthewSaintBull/freenapse"
 API = f"https://api.github.com/repos/{REPO}/releases?per_page=50"
 FALLBACK_DOWNLOAD = f"https://github.com/{REPO}/releases/latest/download/freenapse.exe"
 AUTHOR = {"@type": "Person", "name": "Matteo Santoro", "url": "https://github.com/MatthewSaintBull"}
-NAV = [("/guides/", "Guides"), ("/changelog/", "Changelog"), (f"https://github.com/{REPO}", "GitHub")]
+NAV = [("/devices/", "Devices"), ("/guides/", "Guides"), ("/changelog/", "Changelog"), (f"https://github.com/{REPO}", "GitHub")]
 
 # The guides: src/guides/<slug>.html holds the <main>; the rest comes from here.
 # Bump "modified" when a guide's text changes; it goes to the sitemap and the structured data.
@@ -286,10 +286,14 @@ def main():
     write("404.html", page(
         fill(src("404.html"), name="404.html"), "/404.html", "Page not found, freenapse",
         "There is nothing at this address.", robots='<meta name="robots" content="noindex">\n'))
+    write("devices/index.html", page(
+        fill(src("devices.html"), name="devices.html"), "/devices/", "Supported Razer mice, freenapse",
+        "Which Razer mice freenapse configures without Synapse and what it sets on each: the Viper V3 Pro and Basilisk V2 verified, feature by feature, and every other mouse it knows."))
     write("guides/index.html", page(
         fill(src("guides.html"), name="guides.html"), "/guides/", "freenapse guides: the Viper V3 Pro without Synapse",
         "Short guides for the Razer Viper V3 Pro on Windows: set the DPI and polling rate without Synapse, fix settings that do not save, uninstall Synapse, and the alternatives."))
     urls = [(f"{SITE}/", values["build_date"], "weekly", "1.0"),
+            (f"{SITE}/devices/", date, "weekly", "0.9"),
             (f"{SITE}/guides/", max(g["modified"] for g in GUIDES), "monthly", "0.8"),
             (f"{SITE}/changelog/", date, "weekly", "0.6")]
     for g in GUIDES:

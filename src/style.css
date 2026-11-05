@@ -135,6 +135,9 @@ main > section.loose { padding-block: var(--section-gap-l); }
 .table--mice tbody th { width: 24%; }
 .table--mice td.num { white-space: nowrap; }
 .table td.ok { color: var(--color-accent); font-weight: 600; }
+.table--matrix tbody th { width: 16%; }
+.table--matrix td { width: 28%; }
+.table--matrix td.ok { font-weight: 400; }
 .table td.exp { color: var(--color-ink); }
 .table-note { margin-top: var(--space-lg); font-size: var(--text-sm); color: var(--color-ink-2); max-width: 78ch; }
 .table-note strong { color: var(--color-ink); font-weight: 600; }
