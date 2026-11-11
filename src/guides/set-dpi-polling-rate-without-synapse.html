@@ -3,8 +3,8 @@
     <article class="guide">
       <div class="doc__head">
         <p class="crumb"><a href="/guides/">Guides</a></p>
-        <h1>Set the Viper V3 Pro DPI and polling rate without Synapse</h1>
-        <p class="lead">Both values live in the mouse’s onboard memory. Write them once with freenapse and they stay set with nothing running, on any PC.</p>
+        <h1>Set a Razer mouse’s DPI and polling rate without Synapse</h1>
+        <p class="lead">Both values live in the mouse’s onboard memory. Write them once with freenapse and they stay set with nothing running, on any PC. It works on the mice freenapse <a href="/devices/">has verified</a>; any other Razer mouse can be read.</p>
       </div>
 
       <section aria-labelledby="h-steps">
@@ -17,19 +17,19 @@
           <li><div>
             <h3>Read what the mouse has stored</h3>
             <pre class="code"><span class="k">freenapse status</span></pre>
-            <p>Prints the DPI stages, the active stage and the polling rate straight from the mouse. Keep moving the mouse while a command runs: the wireless Viper V3 Pro stops answering the dongle after a few seconds idle.</p>
+            <p>Prints the DPI stages, the active stage and the polling rate straight from the mouse. Keep moving the mouse while a command runs: a wireless mouse stops answering its dongle after a few seconds idle.</p>
           </div></li>
           <li><div>
             <h3>Set the DPI</h3>
-            <pre class="code"><span class="k">freenapse dpi 1600</span>                      <span class="c"># live DPI, 100 to 35000 in steps of 1</span>
+            <pre class="code"><span class="k">freenapse dpi 1600</span>                      <span class="c"># live DPI, from 100 up to the mouse’s maximum</span>
 <span class="k">freenapse dpi 1600 800</span>                  <span class="c"># independent X and Y</span>
 <span class="k">freenapse stages 2 400 800 1600 3200</span>    <span class="c"># four stages, the second one active</span></pre>
-            <p>Up to five stages. The DPI button under the mouse cycles through them, with no software involved.</p>
+            <p>Up to five stages. The mouse’s DPI button cycles through them, with no software involved. The maximum is 20000 to 45000 depending on the model; <a href="/devices/">supported mice</a> has it for each one.</p>
           </div></li>
           <li><div>
             <h3>Set the polling rate</h3>
             <pre class="code"><span class="k">freenapse polling 4000</span></pre>
-            <p>Wired: 125, 500 or 1000&nbsp;Hz. Through the dongle: 125 to 8000&nbsp;Hz, where 4000 and 8000 need the HyperPolling dongle and use more battery. The rate is stored like everything else.</p>
+            <p>Most mice take 125, 500 or 1000&nbsp;Hz. HyperPolling mice go from 125 to 8000&nbsp;Hz through their dongle, where the higher rates use more battery. Ask for a rate your mouse does not have and freenapse names the ones it does. The rate is stored like everything else.</p>
           </div></li>
           <li><div>
             <h3>Or use the window</h3>
@@ -44,7 +44,7 @@
         <div class="card">
           <dl class="rows">
             <div><dt>DPI stages</dt><dd>Stored in the mouse’s onboard profile as up to five stages plus the active one. The live DPI and the stage table are two separate settings in the mouse; <code>freenapse status</code> shows both.</dd></div>
-            <div><dt>Polling rate</dt><dd>One command to the dongle, or the classic command when wired. The tray app can raise the rate only while a game is in the foreground (<code>polling.game_rate</code> in the config) and lower it again when the game ends.</dd></div>
+            <div><dt>Polling rate</dt><dd>One command, the classic or the HyperPolling one depending on the mouse and its link. The tray app can raise the rate only while a game is in the foreground (<code>polling.game_rate</code> in the config) and lower it again when the game ends.</dd></div>
             <div><dt>Afterwards</dt><dd>Close freenapse. The settings survive reboots and follow the mouse to any PC. The tray app only adds the battery icon, quick switching and per-game profiles.</dd></div>
           </dl>
         </div>

@@ -1,8 +1,8 @@
 # freenapse.app
 
 The website of [freenapse](https://github.com/MatthewSaintBull/freenapse), the
-Razer Viper V3 Pro configurator for Windows that replaces Razer Synapse. Two
-static pages, hosted on GitHub Pages at https://freenapse.app.
+Razer mouse configurator for Windows that replaces Razer Synapse. A handful
+of static pages, hosted on GitHub Pages at https://freenapse.app.
 
 * `src/index.html`: the home page, a full template. `{{version}}`,
   `{{download_url}}` and the other fields are filled at build time from the
@@ -10,7 +10,7 @@ static pages, hosted on GitHub Pages at https://freenapse.app.
   latest release. Its FAQ structured data is generated from the page's own
   questions.
 * `src/_page.html`: the shared chrome (head, nav, footer) of every other page.
-  `src/changelog.html`, `src/guides.html`, `src/404.html` and
+  `src/changelog.html`, `src/devices.html`, `src/guides.html`, `src/404.html` and
   `src/guides/<slug>.html` are the `<main>` of each; the guides' titles,
   descriptions and dates live in the `GUIDES` list of `build.py`, which also
   emits their TechArticle, BreadcrumbList and FAQPage structured data.
@@ -43,5 +43,5 @@ of the settings window. It was built with the
 ## License
 
 MIT, the same as the app. The screenshots show freenapse itself. Razer, Razer
-Synapse, Viper, HyperSpeed and HyperPolling are trademarks of Razer Inc.;
+Synapse, the mouse names, HyperSpeed and HyperPolling are trademarks of Razer Inc.;
 freenapse is not affiliated with, endorsed by or supported by Razer Inc.

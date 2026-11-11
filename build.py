@@ -28,28 +28,28 @@ SITE = "https://freenapse.app"
 REPO = "MatthewSaintBull/freenapse"
 API = f"https://api.github.com/repos/{REPO}/releases?per_page=50"
 FALLBACK_DOWNLOAD = f"https://github.com/{REPO}/releases/latest/download/freenapse.exe"
-AUTHOR = {"@type": "Person", "name": "Matteo Santoro", "url": "https://github.com/MatthewSaintBull"}
+AUTHOR = {"@type": "Person", "name": "MatthewSaintbull", "url": "https://github.com/MatthewSaintBull"}
 NAV = [("/devices/", "Devices"), ("/guides/", "Guides"), ("/changelog/", "Changelog"), (f"https://github.com/{REPO}", "GitHub")]
 
 # The guides: src/guides/<slug>.html holds the <main>; the rest comes from here.
 # Bump "modified" when a guide's text changes; it goes to the sitemap and the structured data.
 GUIDES = [
     {"slug": "set-dpi-polling-rate-without-synapse",
-     "title": "Set the Viper V3 Pro DPI and polling rate without Synapse",
-     "description": "Change the Razer Viper V3 Pro’s DPI stages and polling rate on Windows without Razer Synapse, with one command or the settings window. The values are stored in the mouse.",
-     "published": "2026-10-29", "modified": "2026-10-29"},
+     "title": "Set a Razer mouse’s DPI and polling rate without Synapse",
+     "description": "Change the DPI stages and polling rate of a Razer mouse on Windows without Razer Synapse, with one command or the settings window. The values are stored in the mouse.",
+     "published": "2026-10-29", "modified": "2026-11-11"},
     {"slug": "settings-not-saving-onboard-memory",
-     "title": "Viper V3 Pro settings not saving to onboard memory",
-     "description": "Why the Razer Viper V3 Pro seems to forget DPI, polling rate or button settings, how to read what the mouse actually holds, and the four reasons a setting does not stick.",
-     "published": "2026-10-29", "modified": "2026-10-29"},
+     "title": "Razer mouse settings not saving to onboard memory",
+     "description": "Why a Razer mouse seems to forget DPI, polling rate or button settings, how to read what the mouse actually holds, and the four reasons a setting does not stick.",
+     "published": "2026-10-29", "modified": "2026-11-11"},
     {"slug": "uninstall-razer-synapse-keep-settings",
      "title": "Uninstall Razer Synapse and keep your mouse settings",
-     "description": "How to remove Razer Synapse 4 from Windows without losing the DPI, polling rate and button settings of a Viper V3 Pro, and what the uninstaller leaves behind.",
-     "published": "2026-10-29", "modified": "2026-10-29"},
+     "description": "How to remove Razer Synapse 4 from Windows without losing the DPI, polling rate and button settings of your Razer mouse, and what the uninstaller leaves behind.",
+     "published": "2026-10-29", "modified": "2026-11-11"},
     {"slug": "razer-synapse-alternatives",
      "title": "Razer Synapse alternatives",
      "description": "The ways to configure a Razer mouse without running Synapse 4: freenapse on Windows, OpenRazer and Polychromatic on Linux, Synapse Web in a browser, or setting the mouse once and removing everything.",
-     "published": "2026-10-29", "modified": "2026-10-29"},
+     "published": "2026-10-29", "modified": "2026-11-11"},
 ]
 
 TAG = re.compile(r"<[^>]+>")
@@ -218,7 +218,7 @@ def render_feed(releases, now):
     return ('<?xml version="1.0" encoding="utf-8"?>\n<feed xmlns="http://www.w3.org/2005/Atom">'
             f'<title>freenapse releases</title><link href="{SITE}/changelog/"/>'
             f'<link rel="self" href="{SITE}/feed.xml"/><id>{SITE}/feed.xml</id>'
-            f'<updated>{now}</updated><author><name>Matteo Santoro</name></author>'
+            f'<updated>{now}</updated><author><name>MatthewSaintbull</name></author>'
             + "".join(entries) + "</feed>\n")
 
 
@@ -288,10 +288,10 @@ def main():
         "There is nothing at this address.", robots='<meta name="robots" content="noindex">\n'))
     write("devices/index.html", page(
         fill(src("devices.html"), name="devices.html"), "/devices/", "Supported Razer mice, freenapse",
-        "Which Razer mice freenapse configures without Synapse and what it sets on each: the Viper V3 Pro and Basilisk V2 verified, feature by feature, and every other mouse it knows."))
+        "Which Razer mice freenapse configures without Synapse and what it sets on each: the Viper V3 Pro, Basilisk V2 and Pro Click V2 Vertical verified, feature by feature, and every other mouse it knows."))
     write("guides/index.html", page(
-        fill(src("guides.html"), name="guides.html"), "/guides/", "freenapse guides: the Viper V3 Pro without Synapse",
-        "Short guides for the Razer Viper V3 Pro on Windows: set the DPI and polling rate without Synapse, fix settings that do not save, uninstall Synapse, and the alternatives."))
+        fill(src("guides.html"), name="guides.html"), "/guides/", "freenapse guides: a Razer mouse without Synapse",
+        "Short guides for a Razer mouse on Windows: set the DPI and polling rate without Synapse, fix settings that do not save, uninstall Synapse, and the alternatives."))
     urls = [(f"{SITE}/", values["build_date"], "weekly", "1.0"),
             (f"{SITE}/devices/", date, "weekly", "0.9"),
             (f"{SITE}/guides/", max(g["modified"] for g in GUIDES), "monthly", "0.8"),

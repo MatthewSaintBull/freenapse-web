@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>freenapse: Razer mouse settings without Synapse</title>
-<meta name="description" content="freenapse configures a Razer mouse on Windows without Razer Synapse: DPI, polling rate, buttons and macros written to the mouse’s onboard memory. Verified on the Viper V3 Pro and the Basilisk V2, more mice one probe at a time. One 1 MB file, open source.">
+<meta name="description" content="freenapse configures a Razer mouse on Windows without Razer Synapse: DPI, polling rate, buttons and macros written to the mouse’s onboard memory. Verified on the Viper V3 Pro, Basilisk V2 and Pro Click V2 Vertical, more Razer mice one probe at a time. One 1 MB file, open source.">
 <link rel="canonical" href="https://freenapse.app/">
 <meta name="theme-color" content="#111112">
 <meta name="color-scheme" content="dark">
-<meta name="author" content="Matteo Santoro">
+<meta name="author" content="MatthewSaintbull">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="freenapse">
 <meta property="og:title" content="freenapse: Razer mouse settings without Synapse">
@@ -39,7 +39,7 @@
       "@id": "https://freenapse.app/#app",
       "name": "freenapse",
       "url": "https://freenapse.app/",
-      "description": "Configure a Razer mouse from Windows without Razer Synapse: DPI stages, polling rate, button assignment, macros, sensor and power settings written to the mouse’s onboard memory. Verified on the Viper V3 Pro and the Basilisk V2; other Razer mice open read-only until an owner tests them.",
+      "description": "Configure a Razer mouse from Windows without Razer Synapse: DPI stages, polling rate, button assignment, macros, sensor and power settings written to the mouse’s onboard memory. Verified on the Viper V3 Pro, the Basilisk V2 and the Pro Click V2 Vertical; other Razer mice open read-only until an owner tests them.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Windows 10, Windows 11",
       "softwareVersion": "{{version}}",
@@ -52,7 +52,7 @@
       "license": "https://github.com/MatthewSaintBull/freenapse/blob/main/LICENSE",
       "isAccessibleForFree": true,
       "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-      "author": { "@type": "Person", "name": "Matteo Santoro", "url": "https://github.com/MatthewSaintBull" },
+      "author": { "@type": "Person", "name": "MatthewSaintbull", "url": "https://github.com/MatthewSaintBull" },
       "sameAs": ["https://github.com/MatthewSaintBull/freenapse"]
     },
     {{index_faq}}
@@ -81,7 +81,7 @@
     <div class="container hero__grid">
       <div class="hero__text">
         <h1 id="h-hero">Your Razer mouse, without Synapse</h1>
-        <p class="lead">One 1&nbsp;MB program writes DPI, polling rate and buttons into the mouse’s own memory. Verified on the Viper V3 Pro and the Basilisk V2; <a href="#h-mice">other Razer mice</a> join one probe at a time.</p>
+        <p class="lead">One 1&nbsp;MB program writes DPI, polling rate and buttons into the mouse’s own memory. Verified on the Viper V3 Pro, the Basilisk V2 and the Pro Click V2 Vertical; <a href="#h-mice">other Razer mice</a> join one probe at a time.</p>
         <div>
           <div class="actions">
             <a class="btn" href="{{download_url}}">Download freenapse {{version}}</a>
@@ -104,7 +104,7 @@
     <div class="container">
       <div class="head head--split">
         <h2 id="h-measured">Razer Synapse 4 and freenapse, measured on one PC</h2>
-        <p class="lead">Side by side on the machine freenapse was written on, with the same Viper V3 Pro on its HyperPolling dongle.</p>
+        <p class="lead">Side by side on the machine freenapse is developed on, driving the same wireless mouse through its dongle.</p>
       </div>
       <table class="table">
         <thead><tr><th scope="col"><span class="visually-hidden">What</span></th><th scope="col">Razer Synapse 4</th><th scope="col">freenapse</th></tr></thead>
@@ -127,11 +127,11 @@
       </div>
       <div class="card">
         <dl class="rows">
-          <div><dt>DPI</dt><dd>Up to 5 stages, independent X and Y, 100 to 35000 in steps of 1, and the stage the mouse starts on.</dd></div>
-          <div><dt>Polling rate</dt><dd>125 to 8000&nbsp;Hz. 4000 and 8000 need the HyperPolling dongle; the tray app can raise the rate only while a game runs.</dd></div>
-          <div><dt>Buttons</dt><dd>Every button the mouse has (seven on the Viper V3 Pro, thirteen on the Basilisk V2, with its tilts, clutch and profile button) on the normal and Hypershift layers: mouse functions, keys with modifiers, media keys, DPI stage and cycle, Turbo, macros, disabled. Program and Text buttons are played by the tray app, below.</dd></div>
+          <div><dt>DPI</dt><dd>Up to 5 stages, independent X and Y, from 100 up to the mouse’s maximum (20000 to 45000 by model) in steps of 1, and the stage the mouse starts on.</dd></div>
+          <div><dt>Polling rate</dt><dd>125 to 8000&nbsp;Hz, as far as the mouse and its link go: the rates above 1000 need a HyperPolling mouse or dongle. The tray app can raise the rate only while a game runs.</dd></div>
+          <div><dt>Buttons</dt><dd>Every button the mouse has (eight on most, the DPI button included; thirteen on the Basilisk V2, with its tilts, clutch and profile button) on the normal and Hypershift layers: mouse functions, keys with modifiers, media keys, DPI stage and cycle, Turbo, macros, disabled. Program and Text buttons are played by the tray app, below.</dd></div>
           <div><dt>Dynamic Sensitivity</dt><dd>The onboard acceleration curve: Classic, Natural, Jump, or the points you drag yourself.</dd></div>
-          <div><dt>Sensor</dt><dd>Smart Tracking at 1, 2 or 3&nbsp;mm, or the asymmetric cut-off with lift-off and landing levels, plus angle correction.</dd></div>
+          <div><dt>Sensor</dt><dd>Angle correction, and on mice with the Focus Pro tracking page Smart Tracking at 1, 2 or 3&nbsp;mm or the asymmetric cut-off with lift-off and landing levels.</dd></div>
           <div><dt>Lighting</dt><dd>On mice with LEDs, like the Basilisk V2’s logo and wheel: off, static, breathing or spectrum per zone, and the brightness.</dd></div>
           <div><dt>Power and dongle</dt><dd>Idle sleep timeout, low power mode threshold, the dongle’s indicator LED, pairing.</dd></div>
         </dl>
@@ -160,7 +160,7 @@
     <div class="container">
       <div class="head head--split">
         <h2 id="h-mice">Which Razer mice, and how far each one goes</h2>
-        <p class="lead">freenapse was written on a Viper V3 Pro and writes to it without asking. Every other Razer mouse opens and is read, and is written to only once an owner has tested it. This table is the program’s own device list; <a href="/devices/">supported mice</a> has what each tested mouse can set, feature by feature.</p>
+        <p class="lead">freenapse writes to the mice an owner has tested, setting by setting. Every other Razer mouse opens and is read, and is written to only once its owner has tested it. This table is the program’s own device list; <a href="/devices/">supported mice</a> has what each tested mouse can set, feature by feature.</p>
       </div>
       <table class="table table--mice">
         <thead><tr><th scope="col">Mouse</th><th scope="col">Product id</th><th scope="col">Polling</th><th scope="col">DPI up to</th><th scope="col">Status</th></tr></thead>
@@ -177,7 +177,8 @@
           <tr><th scope="row">Viper Mini SE, wired or wireless</th><td data-col="Product id" class="num">0x009E, 0x009F</td><td data-col="Polling">HyperPolling: 125, 500, 1000&nbsp;Hz wired, 125 to 8000&nbsp;Hz wireless, pairing</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
           <tr><th scope="row">Viper 8KHz</th><td data-col="Product id" class="num">0x0091</td><td data-col="Polling">HyperPolling: 125, 500 to 8000&nbsp;Hz, addressed as a dongle</td><td data-col="DPI up to" class="num">20000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
           <tr><th scope="row">Cobra Pro, wired or wireless</th><td data-col="Product id" class="num">0x00AF, 0x00B0</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
-          <tr><th scope="row">Pro Click V2 Vertical, HyperSpeed dongle</th><td data-col="Product id" class="num">0x00C8</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only: probed by its owner, write tests next. No Dynamic Sensitivity or rotation; lighting and Bluetooth are not covered</td></tr>
+          <tr><th scope="row">Pro Click V2 Vertical, HyperSpeed dongle</th><td data-col="Product id" class="num">0x00C8</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status" class="ok">Verified by its owner: DPI, idle sleep and low-battery threshold written and read back, all 8 buttons. No Dynamic Sensitivity or rotation; lighting and Bluetooth are not covered</td></tr>
+          <tr><th scope="row">Pro Click V2 Vertical, wired</th><td data-col="Product id" class="num">0x00C7</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for a probe over the cable</td></tr>
           <tr><th scope="row">Basilisk V3 Pro, wired or wireless</th><td data-col="Product id" class="num">0x00AA, 0x00AB</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
           <tr><th scope="row">HyperPolling wireless dongle, on its own</th><td data-col="Product id" class="num">0x00B3</td><td data-col="Polling">HyperPolling: 125 to 8000&nbsp;Hz, pairing</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
           <tr><th scope="row">Any other Razer mouse</th><td data-col="Product id" class="num">any, vendor 0x1532</td><td data-col="Polling">classic assumed</td><td data-col="DPI up to" class="num">30000 assumed</td><td data-col="Status">Read-only: <code>status</code> and <code>probe</code> work, every write is refused</td></tr>
@@ -187,7 +188,7 @@
       <div class="split">
         <div class="split__text">
           <h3>To add yours</h3>
-          <p>Run <code>freenapse probe</code>, paste the output into a <a href="https://github.com/MatthewSaintBull/freenapse/issues/new/choose">“New mouse” issue</a>, then test the writes on your mouse and open a pull request with its row in <code>src/device.rs</code>. <a href="https://github.com/MatthewSaintBull/freenapse/blob/main/CONTRIBUTING.md#adding-a-mouse">CONTRIBUTING.md</a> has the four steps; the wired DeathAdder V3 Pro row arrived exactly this way.</p>
+          <p>Run <code>freenapse probe</code>, paste the output into a <a href="https://github.com/MatthewSaintBull/freenapse/issues/new/choose">“New mouse” issue</a>, then test the writes on your mouse and open a pull request with its row in <code>src/device.rs</code>. <a href="https://github.com/MatthewSaintBull/freenapse/blob/main/CONTRIBUTING.md#adding-a-mouse">CONTRIBUTING.md</a> has the four steps; the DeathAdder V3 Pro and the Pro Click V2 Vertical arrived exactly this way.</p>
         </div>
         <div>
           <pre class="code" aria-label="Output of freenapse probe, abridged"><span class="k">freenapse probe</span>
@@ -242,7 +243,7 @@ macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not 
         <div><dt>Can I go back?</dt><dd>Yes. Reinstall Synapse and it rewrites every setting from its own profile. Or delete the config file and run <code>freenapse apply</code> for the defaults.</dd></div>
         <div><dt>Do I have to uninstall Synapse?</dt><dd>Quit it at least. While it runs in the background it rewrites the settings it thinks it owns within about fifteen seconds, so anything freenapse sets appears not to stick. <a href="/guides/uninstall-razer-synapse-keep-settings/">How to uninstall it and keep the settings</a>.</dd></div>
         <div><dt>Why does a command sometimes get no answer?</dt><dd>The wireless mouse stops answering the dongle after a while idle. Keep moving it while a command runs; the tray app knows this and retries on its own.</dd></div>
-        <div><dt>Is it a Razer Synapse alternative for every Razer mouse?</dt><dd>Not yet. It is verified on the Viper V3 Pro and the Basilisk V2, experimental on the wired DeathAdder V3 Pro, and read-only on the other mice in the <a href="#h-mice">table above</a> until their owners test them. The <a href="/guides/razer-synapse-alternatives/">guide to Synapse alternatives</a> covers Linux and the other options.</dd></div>
+        <div><dt>Is it a Razer Synapse alternative for every Razer mouse?</dt><dd>Not yet. It is verified on the Viper V3 Pro, the Basilisk V2 and the Pro Click V2 Vertical, experimental on the wired DeathAdder V3 Pro, and read-only on the other mice in the <a href="#h-mice">table above</a> until their owners test them. The <a href="/guides/razer-synapse-alternatives/">guide to Synapse alternatives</a> covers Linux and the other options.</dd></div>
       </dl>
     </div>
   </section>
@@ -282,7 +283,7 @@ macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not 
     <div class="footer__grid">
       <div>
         <a class="wordmark" href="/" aria-label="freenapse, home"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#181818"/><path d="M41.26 17.74A17 17 0 1 0 46.26 22.74" fill="none" stroke="#1db954" stroke-width="5" stroke-linecap="round"/><circle cx="50" cy="14" r="4.5" fill="#3fd676"/></svg><span><b>free</b>napse</span></a>
-        <p>An independent open-source project by Matteo Santoro, MIT licensed. Not affiliated with, endorsed by or supported by Razer Inc. Razer, Razer Synapse, Viper, DeathAdder, Basilisk, Cobra, HyperSpeed and HyperPolling are trademarks of Razer Inc., named only to say which hardware the program works with.</p>
+        <p>An independent open-source project by MatthewSaintbull, MIT licensed. Not affiliated with, endorsed by or supported by Razer Inc. Razer, Razer Synapse, Viper, DeathAdder, Basilisk, Cobra, Pro Click, HyperSpeed and HyperPolling are trademarks of Razer Inc., named only to say which hardware the program works with.</p>
       </div>
       <ul class="footer__links">
         <li><a href="https://github.com/MatthewSaintBull/freenapse">Source code</a></li>
@@ -298,7 +299,7 @@ macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not 
       </ul>
     </div>
     <div class="footer__legal">
-      <span>Copyright 2026 Matteo Santoro</span>
+      <span>Copyright 2026 MatthewSaintbull</span>
       <span>Use at your own risk: freenapse changes what is stored in the mouse’s onboard memory.</span>
       <span>Page built <time datetime="{{build_date}}">{{build_date_text}}</time></span>
     </div>
