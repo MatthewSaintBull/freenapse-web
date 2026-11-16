@@ -288,7 +288,7 @@ def main():
         "There is nothing at this address.", robots='<meta name="robots" content="noindex">\n'))
     write("devices/index.html", page(
         fill(src("devices.html"), name="devices.html"), "/devices/", "Supported Razer mice, freenapse",
-        "Which Razer mice freenapse configures without Synapse and what it sets on each: the Viper V3 Pro, Basilisk V2 and Pro Click V2 Vertical verified, feature by feature, and every other mouse it knows."))
+        "Which Razer mice freenapse configures without Synapse and what it sets on each: the Viper V3 Pro, Basilisk V2, Basilisk V3 and Pro Click V2 Vertical verified, feature by feature, and every other mouse it knows."))
     write("guides/index.html", page(
         fill(src("guides.html"), name="guides.html"), "/guides/", "freenapse guides: a Razer mouse without Synapse",
         "Short guides for a Razer mouse on Windows: set the DPI and polling rate without Synapse, fix settings that do not save, uninstall Synapse, and the alternatives."))
