@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>freenapse: Razer mouse settings without Synapse</title>
-<meta name="description" content="freenapse configures a Razer mouse on Windows without Razer Synapse: DPI, polling rate, buttons and macros written to the mouse’s onboard memory. Verified on the Viper V3 Pro, Basilisk V2, Basilisk V3 and Pro Click V2 Vertical, more Razer mice one probe at a time. One 1 MB file, open source.">
+<meta name="description" content="freenapse configures a Razer mouse on Windows without Razer Synapse: DPI, polling rate, buttons and macros written to the mouse’s onboard memory. Verified on the Viper V3 Pro, Viper V3 Pro SE, Basilisk V2, Basilisk V3, Basilisk V3 Pro and Pro Click V2 Vertical, more Razer mice one probe at a time. One 1 MB file, open source.">
 <link rel="canonical" href="https://freenapse.app/">
 <meta name="theme-color" content="#111112">
 <meta name="color-scheme" content="dark">
@@ -39,7 +39,7 @@
       "@id": "https://freenapse.app/#app",
       "name": "freenapse",
       "url": "https://freenapse.app/",
-      "description": "Configure a Razer mouse from Windows without Razer Synapse: DPI stages, polling rate, button assignment, macros, sensor and power settings written to the mouse’s onboard memory. Verified on the Viper V3 Pro, the Basilisk V2, the Basilisk V3 and the Pro Click V2 Vertical; other Razer mice open read-only until an owner tests them.",
+      "description": "Configure a Razer mouse from Windows without Razer Synapse: DPI stages, polling rate, button assignment, macros, sensor and power settings written to the mouse’s onboard memory. Verified on the Viper V3 Pro, the Viper V3 Pro SE, the Basilisk V2, the Basilisk V3, the Basilisk V3 Pro and the Pro Click V2 Vertical; other Razer mice open read-only until an owner tests them.",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Windows 10, Windows 11",
       "softwareVersion": "{{version}}",
@@ -82,7 +82,7 @@
     <div class="container hero__grid">
       <div class="hero__text">
         <h1 id="h-hero">Your Razer mouse, without Synapse</h1>
-        <p class="lead">One 1&nbsp;MB program writes DPI, polling rate and buttons into the mouse’s own memory. Verified on the Viper V3 Pro, the Basilisk V2, the Basilisk V3 and the Pro Click V2 Vertical; <a href="#h-mice">other Razer mice</a> join one probe at a time.</p>
+        <p class="lead">One 1&nbsp;MB program writes DPI, polling rate and buttons into the mouse’s own memory. Verified on the Viper V3 Pro, the Viper V3 Pro SE, the Basilisk V2, the Basilisk V3, the Basilisk V3 Pro and the Pro Click V2 Vertical; <a href="#h-mice">other Razer mice</a> join one probe at a time.</p>
         <div>
           <div class="actions">
             <a class="btn" href="{{download_url}}">Download freenapse {{version}}</a>
@@ -168,6 +168,8 @@
         <tbody>
           <tr><th scope="row">Viper V3 Pro, wired</th><td data-col="Product id" class="num">0x00C0</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">35000</td><td data-col="Status" class="ok">Verified, the author’s mouse</td></tr>
           <tr><th scope="row">Viper V3 Pro, HyperSpeed or HyperPolling dongle</th><td data-col="Product id" class="num">0x00C1</td><td data-col="Polling">HyperPolling: 125 to 8000&nbsp;Hz, dongle pairing and LED</td><td data-col="DPI up to" class="num">35000</td><td data-col="Status" class="ok">Verified, the author’s mouse</td></tr>
+          <tr><th scope="row">Viper V3 Pro SE, wired</th><td data-col="Product id" class="num">0x00DE</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">35000</td><td data-col="Status" class="ok">Verified by its owner: DPI, polling and all 8 buttons on both layers. Idle sleep, low-battery mode, rotation and Dynamic Sensitivity not tested yet</td></tr>
+          <tr><th scope="row">Viper V3 Pro SE, HyperSpeed receiver</th><td data-col="Product id" class="num">0x00DF</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">35000</td><td data-col="Status" class="ok">Verified by its owner: DPI, polling and all 8 buttons on both layers. Idle sleep, low-battery mode, rotation and Dynamic Sensitivity not tested yet</td></tr>
           <tr><th scope="row">Basilisk V2</th><td data-col="Product id" class="num">0x0085</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">20000</td><td data-col="Status" class="ok">Verified, the author’s mouse: all 13 buttons, onboard macros, logo and wheel lighting</td></tr>
           <tr><th scope="row">DeathAdder V3 Pro, wired</th><td data-col="Product id" class="num">0x00B6</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status" class="exp">Experimental: DPI, polling, idle, low battery, buttons and Smart Tracking read back by an owner. No Dynamic Sensitivity or rotation. Writes need <code>allow_unverified</code></td></tr>
           <tr><th scope="row">DeathAdder V3 Pro, wireless</th><td data-col="Product id" class="num">0x00B7</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">35000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
@@ -181,7 +183,9 @@
           <tr><th scope="row">Pro Click V2 Vertical, HyperSpeed dongle</th><td data-col="Product id" class="num">0x00C8</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status" class="ok">Verified by its owner: DPI, idle sleep and low-battery threshold written and read back, all 8 buttons. No Dynamic Sensitivity or rotation; lighting and Bluetooth are not covered</td></tr>
           <tr><th scope="row">Pro Click V2 Vertical, wired</th><td data-col="Product id" class="num">0x00C7</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for a probe over the cable</td></tr>
           <tr><th scope="row">Basilisk V3, wired</th><td data-col="Product id" class="num">0x0099</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">26000</td><td data-col="Status" class="ok">Verified by its owner: DPI, polling and all 13 buttons with the scroll-mode button, on both layers. No battery; onboard macros and profile switching not tested yet, lighting not covered</td></tr>
-          <tr><th scope="row">Basilisk V3 Pro, wired or wireless</th><td data-col="Product id" class="num">0x00AA, 0x00AB</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
+          <tr><th scope="row">Basilisk V3 Pro, wired</th><td data-col="Product id" class="num">0x00AA</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status" class="ok">Verified by its owner: DPI, polling and buttons; all 13 buttons with the scroll-mode button. No Dynamic Sensitivity or rotation; onboard macros and profile switching not tested yet, lighting not covered</td></tr>
+          <tr><th scope="row">Basilisk V3 Pro, Mouse Dock Pro</th><td data-col="Product id" class="num">0x00A4</td><td data-col="Polling">HyperPolling: 125, 500 to 8000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status" class="ok">Verified by its owner: DPI, polling and buttons; 4000&nbsp;Hz read back, 8000&nbsp;Hz not tested yet. Pairing from the dock is not covered</td></tr>
+          <tr><th scope="row">Basilisk V3 Pro, HyperSpeed dongle</th><td data-col="Product id" class="num">0x00AB</td><td data-col="Polling">classic: 125, 500, 1000&nbsp;Hz</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for a probe through the dongle</td></tr>
           <tr><th scope="row">HyperPolling wireless dongle, on its own</th><td data-col="Product id" class="num">0x00B3</td><td data-col="Polling">HyperPolling: 125 to 8000&nbsp;Hz, pairing</td><td data-col="DPI up to" class="num">30000</td><td data-col="Status">Read-only, waiting for an owner</td></tr>
           <tr><th scope="row">Any other Razer mouse</th><td data-col="Product id" class="num">any, vendor 0x1532</td><td data-col="Polling">classic assumed</td><td data-col="DPI up to" class="num">30000 assumed</td><td data-col="Status">Read-only: <code>status</code> and <code>probe</code> work, every write is refused</td></tr>
         </tbody>
@@ -245,7 +249,7 @@ macro storage         tid 1f 06/8e/0e  <span class="c">no answer (status 05 not 
         <div><dt>Can I go back?</dt><dd>Yes. Reinstall Synapse and it rewrites every setting from its own profile. Or delete the config file and run <code>freenapse apply</code> for the defaults.</dd></div>
         <div><dt>Do I have to uninstall Synapse?</dt><dd>Quit it at least. While it runs in the background it rewrites the settings it thinks it owns within about fifteen seconds, so anything freenapse sets appears not to stick. <a href="/guides/uninstall-razer-synapse-keep-settings/">How to uninstall it and keep the settings</a>.</dd></div>
         <div><dt>Why does a command sometimes get no answer?</dt><dd>The wireless mouse stops answering the dongle after a while idle. Keep moving it while a command runs; the tray app knows this and retries on its own.</dd></div>
-        <div><dt>Is it a Razer Synapse alternative for every Razer mouse?</dt><dd>Not yet. It is verified on the Viper V3 Pro, the Basilisk V2, the Basilisk V3 and the Pro Click V2 Vertical, experimental on the wired DeathAdder V3 Pro, and read-only on the other mice in the <a href="#h-mice">table above</a> until their owners test them. The <a href="/guides/razer-synapse-alternatives/">guide to Synapse alternatives</a> covers Linux and the other options.</dd></div>
+        <div><dt>Is it a Razer Synapse alternative for every Razer mouse?</dt><dd>Not yet. It is verified on the Viper V3 Pro, the Viper V3 Pro SE, the Basilisk V2, the Basilisk V3, the Basilisk V3 Pro and the Pro Click V2 Vertical, experimental on the wired DeathAdder V3 Pro, and read-only on the other mice in the <a href="#h-mice">table above</a> until their owners test them. The <a href="/guides/razer-synapse-alternatives/">guide to Synapse alternatives</a> covers Linux and the other options.</dd></div>
       </dl>
     </div>
   </section>
